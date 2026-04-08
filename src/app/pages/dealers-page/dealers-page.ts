@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
     <section class="dealers-page">
       <div class="container">
         <span class="section-label">Дилеры</span>
-        <h1 class="section-title">Официальные дилеры <em>Albakore</em></h1>
+        <h1 class="page-title">Официальные дилеры <em>Albakore</em></h1>
         <p class="dealers-page__desc">
           Раздел находится в разработке. Для получения контактов дилеров
           обратитесь к нам напрямую.
@@ -19,7 +19,7 @@ import { RouterLink } from '@angular/router';
   `,
   styles: [`
     .dealers-page {
-      padding: 120px 0 80px;
+      padding: 148px 0 80px;
       min-height: 60vh;
     }
     .dealers-page__desc {

@@ -156,6 +156,23 @@ img {
   display: block;
 }
 
+.page-title {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--dark);
+  margin-bottom: 0;
+
+  em {
+    font-style: normal;
+    color: var(--red);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
+}
+
 .section-title {
   font-size: 36px;
   font-weight: 700;

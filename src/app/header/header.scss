@@ -9,15 +9,10 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(10, 21, 40, 0.85);
+    background: rgba(10, 21, 40, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    transition: background 0.3s ease;
     z-index: -1;
-  }
-
-  &--scrolled::before {
-    background: rgba(10, 21, 40, 0.97);
   }
 
   // ── Desktop layout: logo | nav (center) | phone ──
