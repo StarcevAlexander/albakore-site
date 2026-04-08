@@ -1,0 +1,27 @@
+<section class="gallery" id="gallery">
+  <div class="gallery__header container">
+    <h2 class="section-title">Фотогалерея</h2>
+    <div class="gallery__controls">
+      <button class="gallery-prev gallery__btn" aria-label="Назад">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M10.7 2.3L5 8l5.7 5.7-1.4 1.4L2.3 8l7-7 1.4 1.3z"/>
+        </svg>
+      </button>
+      <button class="gallery-next gallery__btn" aria-label="Вперёд">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M5.3 13.7L11 8 5.3 2.3l1.4-1.4L13.7 8l-7 7-1.4-1.3z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="swiper" #swiperEl>
+    <div class="swiper-wrapper">
+      @for (photo of photos; track photo.alt) {
+        <div class="swiper-slide gallery__slide">
+          <img [src]="photo.src" [alt]="photo.alt" loading="lazy">
+        </div>
+      }
+    </div>
+  </div>
+</section>

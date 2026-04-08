@@ -1,0 +1,49 @@
+<section class="contact-form" id="contacts">
+  <div class="contact-form__overlay">
+    <div class="container">
+      <div class="contact-form__layout">
+        <div class="contact-form__info">
+          <span class="section-label">Связаться с нами</span>
+          <h2 class="section-title" style="color:#fff">
+            Получите консультацию<br>прямо сейчас
+          </h2>
+          <p class="contact-form__desc">
+            Оставьте заявку на бесплатную консультацию, мы свяжемся с вами в самое ближайшее время!
+            Менеджеры нашей компании подробно проконсультируют вас и помогут подобрать оптимальное решение.
+          </p>
+        </div>
+
+        <div class="contact-form__form-wrap">
+          @if (!sent()) {
+            <form class="contact-form__form" (ngSubmit)="submit()">
+              <input
+                type="text"
+                placeholder="Ваше имя"
+                [ngModel]="name()"
+                (ngModelChange)="name.set($event)"
+                name="name"
+                required
+                class="contact-form__input">
+              <input
+                type="tel"
+                placeholder="Номер телефона"
+                [ngModel]="phone()"
+                (ngModelChange)="phone.set($event)"
+                name="phone"
+                required
+                class="contact-form__input">
+              <button type="submit" class="btn btn--primary"><span>Получить консультацию</span></button>
+              <p class="contact-form__privacy">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+            </form>
+          } @else {
+            <div class="contact-form__success">
+              <div class="contact-form__success-icon">✓</div>
+              <h3>Спасибо за обращение!</h3>
+              <p>Мы свяжемся с вами в ближайшее время.</p>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,124 @@
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    height: 100svh;
+    min-height: 500px;
+  }
+}
+
+// Swiper занимает весь блок
+.hero-slider .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slider .swiper-wrapper {
+  height: 100%;
+}
+
+.hero-slider__slide {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  // тёмный оверлей
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+  }
+}
+
+// Текст поверх слайдера
+.hero-slider__content {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+
+  @media (max-width: 768px) {
+    bottom: 60px;
+  }
+}
+
+.hero-slider__label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10px;
+}
+
+.hero-slider__title {
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 18px;
+
+  em {
+    font-style: normal;
+    color: var(--red);
+  }
+}
+
+.hero-slider__desc {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 520px;
+  line-height: 1.65;
+  margin-bottom: 32px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.hero-slider__btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+// Pagination dots
+.hero-slider__dots {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+}
+
+:host ::ng-deep .hero-slider__dot {
+  width: 32px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: background 0.3s;
+  border: none;
+  padding: 0;
+  display: block;
+}
+
+:host ::ng-deep .hero-slider__dot--active {
+  background: #fff;
+}
