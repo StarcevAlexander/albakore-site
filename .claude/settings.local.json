@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "WebSearch"
+      "WebSearch",
+      "Bash(sed:*)",
+      "Bash(mkdir -p public/images/shared)",
+      "Bash(curl -s -L -o public/images/shared/photo-1.webp \"https://i.siteapi.org/VLzj4cOkFNwo8rzsJoRFr4WfPo4=/fit-in/400x534/center/top/filters:fill\\(transparent\\)/s2.siteapi.org/9d06b80821fb43d/img/45nl36yuzda80cw0o0w4ckgk0os88o\")",
+      "Bash(curl -s -L -o public/images/shared/photo-2.webp \"https://i.siteapi.org/g5d25GySRf81yZwAVkK0ZzFdzTw=/fit-in/400x534/center/top/filters:fill\\(transparent\\)/s2.siteapi.org/9d06b80821fb43d/img/ocm0962zwyog4ggsowksgo40oo000g\")",
+      "Bash(curl -s -L -o public/images/shared/photo-3.webp \"https://i.siteapi.org/MTD2fqwwzNzzgoiFKL1tPOHFIfE=/center/top/filters:fill\\(white\\)/s2.siteapi.org/9d06b80821fb43d/img/nn0py7iw2mock8wcks4c8cwwcwk0sk\")",
+      "Bash(mkdir -p public/images/__TRACKED_VAR__)"
     ]
   }
 }

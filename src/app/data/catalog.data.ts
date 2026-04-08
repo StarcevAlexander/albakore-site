@@ -1,13 +1,11 @@
 import { BoatModel } from '../services/catalog.service';
 
-// TODO: заменить img на реальные URL с CDN rubmaster.ru
-// Формат CDN: //i.siteapi.org/{hash}=/fit-in/424x2000/filters:format(webp):upscale()/s.siteapi.org/...
-
 export const CATALOG_ITEMS: BoatModel[] = [
   {
     slug: 'mobi-120',
     name: 'Моби-120',
-    img: 'https://placehold.co/424x280/1a2a3a/fff?text=Моби-120',
+    img: 'images/mrg-300.webp',
+    photos: ['images/shared/photo-1.webp', 'images/shared/photo-2.webp', 'images/shared/photo-3.webp'],
     length: '13 см',
     capacity: 'Мобильный',
     material: 'Бензин',
@@ -24,7 +22,8 @@ export const CATALOG_ITEMS: BoatModel[] = [
   {
     slug: 'mobi-160',
     name: 'Моби-160/161',
-    img: 'https://placehold.co/424x280/1a2a3a/fff?text=Моби-160',
+    img: 'images/mobi-160.webp',
+    photos: ['images/shared/photo-1.webp', 'images/shared/photo-2.webp', 'images/shared/photo-3.webp'],
     length: '16 см',
     capacity: 'Прицепной',
     material: 'Бензин/Дизель',
@@ -41,7 +40,8 @@ export const CATALOG_ITEMS: BoatModel[] = [
   {
     slug: 'mobi-200',
     name: 'Моби-200/201',
-    img: 'https://placehold.co/424x280/1a2a3a/fff?text=Моби-200',
+    img: 'images/mobi-200.webp',
+    photos: ['images/shared/photo-1.webp', 'images/shared/photo-2.webp', 'images/shared/photo-3.webp'],
     length: '20 см',
     capacity: 'Прицепной',
     material: 'Дизель',
@@ -58,7 +58,8 @@ export const CATALOG_ITEMS: BoatModel[] = [
   {
     slug: 'mobi-250',
     name: 'Моби-250/261',
-    img: 'https://placehold.co/424x280/1a2a3a/fff?text=Моби-250',
+    img: 'images/mobi-250.webp',
+    photos: ['images/shared/photo-1.webp', 'images/shared/photo-2.webp', 'images/shared/photo-3.webp'],
     length: '26 см',
     capacity: 'Прицепной',
     material: 'Дизель',
@@ -75,7 +76,8 @@ export const CATALOG_ITEMS: BoatModel[] = [
   {
     slug: 'mobi-300',
     name: 'Моби-300',
-    img: 'https://placehold.co/656x280/1a2a3a/fff?text=Моби-300',
+    img: 'images/mobi-300.webp',
+    photos: ['images/shared/photo-1.webp', 'images/shared/photo-2.webp', 'images/shared/photo-3.webp'],
     length: '31 см',
     capacity: 'Прицепной',
     material: 'Дизель',
@@ -92,7 +94,8 @@ export const CATALOG_ITEMS: BoatModel[] = [
   {
     slug: 'mrg-300',
     name: 'МРГ-300Д/Е',
-    img: 'https://placehold.co/656x280/1a2a3a/fff?text=МРГ-300Д/Е',
+    img: 'images/mrg-300.webp',
+    photos: ['images/shared/photo-1.webp', 'images/shared/photo-2.webp', 'images/shared/photo-3.webp'],
     length: '40×45 см',
     capacity: 'Стационарный',
     material: 'Дизель/Электро',
@@ -109,7 +112,8 @@ export const CATALOG_ITEMS: BoatModel[] = [
   {
     slug: 'mrg-250-nav',
     name: 'МРГ-250/300 навесной',
-    img: 'https://placehold.co/424x280/1a2a3a/fff?text=МРГ-250/300',
+    img: 'images/mrg-300.webp',
+    photos: ['images/shared/photo-1.webp', 'images/shared/photo-2.webp', 'images/shared/photo-3.webp'],
     length: '25–30 см',
     capacity: 'Навесной',
     material: 'Карданный вал',

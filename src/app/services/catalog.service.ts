@@ -5,6 +5,7 @@ export interface BoatModel {
   slug: string;
   name: string;
   img: string;
+  photos?: string[];
   length: string;
   capacity: string;
   material: string;

@@ -8,6 +8,33 @@ import { RouterLink } from '@angular/router';
   styleUrl: './leasing-page.scss',
 })
 export class LeasingPage {
+  partners = [
+    {
+      name: 'Сбербанк Лизинг',
+      type: 'Банковский лизинг',
+      phone: '+7 (800) 555-55-50',
+      email: 'leasing@sberbank.ru',
+      site: 'sberleasing.ru',
+      note: 'Федеральная программа для МСБ. Первый взнос от 10%, срок до 60 мес.',
+    },
+    {
+      name: 'ВТБ Лизинг',
+      type: 'Финансовый лизинг',
+      phone: '+7 (800) 100-24-24',
+      email: 'vtbleasing@vtb.ru',
+      site: 'vtbleasing.ru',
+      note: 'Специальные условия для сельхозтехники и спецоборудования.',
+    },
+    {
+      name: 'Балтийский лизинг',
+      type: 'Оперативный лизинг',
+      phone: '+7 (800) 500-55-51',
+      email: 'info@bl-leasing.ru',
+      site: 'bl-leasing.ru',
+      note: 'Быстрое одобрение за 1 день. Работаем с ИП и физическими лицами.',
+    },
+  ];
+
   benefits = [
     { title: 'Первоначальный взнос', value: 'от 10%' },
     { title: 'Срок лизинга', value: 'до 5 лет' },

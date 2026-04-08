@@ -10,8 +10,27 @@
       </a>
 
       <div class="product-detail__layout">
-        <div class="product-detail__image">
-          <img [src]="boat.img" [alt]="boat.name" loading="lazy">
+
+        <!-- Фото галерея -->
+        <div class="product-detail__gallery">
+          <div class="product-detail__main-photo">
+            <img [src]="currentPhoto()" [alt]="boat.name" loading="lazy">
+          </div>
+
+          @if (allPhotos().length > 1) {
+            <div class="product-detail__thumbs">
+              @for (photo of allPhotos(); track photo) {
+                <button
+                  class="product-detail__thumb"
+                  [class.product-detail__thumb--active]="photo === currentPhoto()"
+                  (click)="setPhoto(photo)"
+                  type="button"
+                >
+                  <img [src]="photo" [alt]="boat.name" loading="lazy">
+                </button>
+              }
+            </div>
+          }
         </div>
 
         <div class="product-detail__info">
@@ -33,7 +52,7 @@
 
           <div class="product-detail__actions">
             <a routerLink="/company-contacts" class="btn btn--primary"><span>Узнать стоимость</span></a>
-            <a routerLink="/contacts" class="btn btn--secondary"><span>Задать вопрос</span></a>
+            <a routerLink="/company-contacts" class="btn btn--secondary"><span>Задать вопрос</span></a>
           </div>
         </div>
       </div>

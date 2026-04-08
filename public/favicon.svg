@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Фон -->
+  <rect width="32" height="32" rx="6" fill="#0a1528"/>
+  <!-- Внешний круг -->
+  <circle cx="16" cy="16" r="13" stroke="#E21134" stroke-width="1.5" fill="none"/>
+  <!-- Лезвия -->
+  <path d="M16 11 L18.5 4 Q16 2.5 13.5 4 Z" fill="#E21134"/>
+  <path d="M21 16 L28 13.5 Q29.5 16 28 18.5 Z" fill="#E21134"/>
+  <path d="M16 21 L13.5 28 Q16 29.5 18.5 28 Z" fill="#E21134"/>
+  <path d="M11 16 L4 18.5 Q2.5 16 4 13.5 Z" fill="#E21134"/>
+  <!-- Центральная втулка -->
+  <circle cx="16" cy="16" r="4" fill="#E21134"/>
+  <circle cx="16" cy="16" r="1.5" fill="#0a1528"/>
+</svg>

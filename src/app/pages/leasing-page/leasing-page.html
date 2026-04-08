@@ -2,7 +2,6 @@
 
   <section class="leasing-hero">
     <div class="container">
-      <span class="section-label">Лизинг</span>
       <h1 class="page-title">Купить измельчитель <em>в лизинг</em></h1>
       <p class="leasing-hero__lead">
         Приобретайте рубильные машины RubMaster для предприятий и частных хозяйств с минимальным
@@ -31,6 +30,38 @@
             <div class="leasing-step__num">{{ step.num }}</div>
             <h3 class="leasing-step__title">{{ step.title }}</h3>
             <p class="leasing-step__desc">{{ step.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="leasing-partners">
+    <div class="container">
+      <span class="section-label">Партнёры</span>
+      <h2 class="section-title">Наши лизинговые <em>партнёры</em></h2>
+      <div class="leasing-partners__grid">
+        @for (p of partners; track p.name) {
+          <div class="leasing-partner">
+            <div class="leasing-partner__header">
+              <h3 class="leasing-partner__name">{{ p.name }}</h3>
+              <span class="leasing-partner__type">{{ p.type }}</span>
+            </div>
+            <p class="leasing-partner__note">{{ p.note }}</p>
+            <ul class="leasing-partner__contacts">
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.18z"/></svg>
+                <a [href]="'tel:' + p.phone.replace(/\\D/g, '')">{{ p.phone }}</a>
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a [href]="'mailto:' + p.email">{{ p.email }}</a>
+              </li>
+              <li>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                {{ p.site }}
+              </li>
+            </ul>
           </div>
         }
       </div>

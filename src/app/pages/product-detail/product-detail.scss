@@ -41,16 +41,57 @@
     }
   }
 
-  &__image {
+  &__gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__main-photo {
     border-radius: 16px;
     overflow: hidden;
     aspect-ratio: 4/3;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    background: #f0f2f5;
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: opacity 0.2s;
+    }
+  }
+
+  &__thumbs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  &__thumb {
+    width: 72px;
+    height: 72px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    cursor: pointer;
+    padding: 0;
+    background: #f0f2f5;
+    transition: border-color 0.2s;
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &--active {
+      border-color: var(--red);
+    }
+
+    &:hover:not(&--active) {
+      border-color: rgba(226, 17, 52, 0.4);
     }
   }
 

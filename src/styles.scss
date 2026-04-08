@@ -156,6 +156,13 @@ img {
   display: block;
 }
 
+// Бренд-имя: Rub — наследует цвет контекста, Master — красный
+.rm-brand {
+  font-style: normal;
+  .rm-rub { color: inherit; }
+  .rm-master { color: var(--red); }
+}
+
 .page-title {
   font-size: clamp(32px, 5vw, 52px);
   font-weight: 700;
@@ -165,7 +172,7 @@ img {
 
   em {
     font-style: normal;
-    color: var(--red);
+    color: var(--dark);
   }
 
   @media (max-width: 768px) {
