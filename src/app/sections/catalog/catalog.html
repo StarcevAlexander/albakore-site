@@ -1,7 +1,7 @@
 <section class="catalog" id="catalog">
   <div class="container">
     <span class="section-label">Модельный ряд</span>
-    <h1 class="page-title">Каталог катеров <em>Albakore</em></h1>
+    <h1 class="page-title">Модельный ряд <em>RubMaster</em></h1>
 
     <div class="catalog__grid">
       @for (model of models; track model.slug) {
@@ -20,7 +20,7 @@
               <a [routerLink]="['/catalog', model.slug]" class="btn btn--secondary-white catalog-card__btn">
                 <span>Подробнее</span>
               </a>
-              <a routerLink="/contacts" class="btn btn--primary catalog-card__btn">
+              <a routerLink="/company-contacts" class="btn btn--primary catalog-card__btn">
                 <span>Узнать стоимость</span>
               </a>
             </div>

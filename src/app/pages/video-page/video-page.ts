@@ -6,6 +6,19 @@ interface VideoItem {
   title: string;
 }
 
+// Rutube embed: https://rutube.ru/play/embed/{id}
+// TODO: заменить ID на реальные из канала @rubmastermobi
+const RUTUBE_BASE = 'https://rutube.ru/play/embed/';
+
+const RAW_VIDEOS = [
+  { id: 'de5e91b8e35e54e5b9ef8c099fde6be0', title: 'Мобильный измельчитель Моби-250 — запуск в Геленджике' },
+  { id: 'de5e91b8e35e54e5b9ef8c099fde6be0', title: 'Мобильный измельчитель Моби-251 — доставка в Белгород' },
+  { id: 'de5e91b8e35e54e5b9ef8c099fde6be0', title: 'Мобильный измельчитель Моби-160' },
+  { id: 'de5e91b8e35e54e5b9ef8c099fde6be0', title: 'Мобильный измельчитель Моби-200' },
+  { id: 'de5e91b8e35e54e5b9ef8c099fde6be0', title: 'Мобильный измельчитель Моби-300' },
+  { id: 'de5e91b8e35e54e5b9ef8c099fde6be0', title: 'Стационарный измельчитель МРГ-300Е' },
+];
+
 @Component({
   selector: 'app-video-page',
   imports: [],
@@ -15,21 +28,8 @@ interface VideoItem {
 export class VideoPage {
   private sanitizer = inject(DomSanitizer);
 
-  private rawVideos = [
-    { id: 'dQw4w9WgXcQ', title: 'Albakore 460 — обзор катера' },
-    { id: 'dQw4w9WgXcQ', title: 'Albakore 530 — ходовые испытания' },
-    { id: 'dQw4w9WgXcQ', title: 'Albakore 620 — на воде' },
-    { id: 'dQw4w9WgXcQ', title: 'Albakore 780 — полный обзор' },
-    { id: 'dQw4w9WgXcQ', title: 'Albakore 950 — морской поход' },
-    { id: 'dQw4w9WgXcQ', title: 'Albakore 1150 FLY — презентация' },
-    { id: 'dQw4w9WgXcQ', title: 'Производство катеров Albakore' },
-    { id: 'dQw4w9WgXcQ', title: 'Albakore — рыбалка на Ладоге' },
-  ];
-
-  videos: VideoItem[] = this.rawVideos.map(v => ({
+  videos: VideoItem[] = RAW_VIDEOS.map(v => ({
     title: v.title,
-    url: this.sanitizer.bypassSecurityTrustResourceUrl(
-      `https://www.youtube.com/embed/${v.id}`
-    ),
+    url: this.sanitizer.bypassSecurityTrustResourceUrl(RUTUBE_BASE + v.id),
   }));
 }

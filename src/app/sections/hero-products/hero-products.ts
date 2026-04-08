@@ -10,21 +10,21 @@ import { RouterLink } from '@angular/router';
 export class HeroProducts {
   products = [
     {
-      badge: 'Новый флагман',
-      title: 'Яхта с флайбриджем',
-      model: 'Albakore 1150 FLY',
-      desc: 'Откройте для себя новый уровень свободы на воде. Albakore 1150 Fly — это полноценная яхта с двумя каютами, флайбриджем, современным оборудованием и запасом автономности, достойным дальних путешествий.',
-      img: '//i.siteapi.org/cmqP38DlawniVtwazaMadFN7r7Q=/fit-in/656x/filters:format(webp):no_upscale()/s.siteapi.org/fd0650dee05b0a9.ru/horizontal-cards/5cx0gj9qvf4ssgogk0oswwkcoogkck',
-      catalogUrl: '/catalog/albakore-1150-fly',
+      badge: 'Флагман серии',
+      title: 'Прицепной измельчитель',
+      model: 'Моби-300',
+      desc: 'Максимальная мощность и производительность в линейке прицепных измельчителей. Диаметр переработки до 31 см, дизельный двигатель 136–156 л.с., исполнение с диском или барабаном. Система «No Stress» защищает привод от перегрузок.',
+      img: 'https://placehold.co/656x480/1a2a3a/fff?text=Моби-300',
+      catalogUrl: '/catalog/mobi-300',
       reversed: false,
     },
     {
-      badge: 'Эксклюзив',
-      title: 'Всепогодная Яхта',
-      model: 'Albakore 780',
-      desc: 'Встречайте яхту, которая перепишет ваши представления о водном отдыхе. Семейные путешествия, адреналиновые приключения или уикенд с друзьями – Albakore 780 готова ко всему.',
-      img: '//i.siteapi.org/YkcTKG-nRlZZzox9vEa_qRAlMvo=/fit-in/656x2000/filters:format(webp):upscale()/s.siteapi.org/fd0650dee05b0a9.ru/horizontal-cards/8pqcdpk241gcoc8o0g44gs4k4s4c0g',
-      catalogUrl: '/catalog/albakore-780',
+      badge: 'Стационарная серия',
+      title: 'Промышленный измельчитель',
+      model: 'МРГ-300Д/Е',
+      desc: 'Стационарный измельчитель для постоянного размещения на производстве. Производительность до 40 м³/час по плотному сырью. Два варианта привода: дизельный двигатель или электромотор. Опция — входной конвейер.',
+      img: 'https://placehold.co/656x480/1a2a3a/fff?text=МРГ-300',
+      catalogUrl: '/catalog/mrg-300',
       reversed: true,
     },
   ];

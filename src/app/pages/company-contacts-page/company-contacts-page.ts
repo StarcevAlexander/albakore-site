@@ -11,22 +11,27 @@ export class CompanyContactsPage {
   contacts = [
     {
       label: 'Телефон',
-      value: '8 (812) 930-16-28',
-      href: 'tel:+78129301628',
+      value: '+7 (910) 778-93-58',
+      href: 'tel:+79107789358',
     },
     {
       label: 'E-mail',
-      value: 'info@albakore.ru',
-      href: 'mailto:info@albakore.ru',
+      value: 'promservis-33@mail.ru',
+      href: 'mailto:promservis-33@mail.ru',
     },
     {
-      label: 'Адрес офиса',
-      value: 'Санкт-Петербург, наб. Обводного канала, 14',
+      label: 'Адрес',
+      value: 'ул. Полины Осипенко, 58, г. Владимир, 600007',
       href: null,
     },
     {
       label: 'Режим работы',
-      value: 'Пн–Пт: 9:00–18:00, Сб: 10:00–15:00',
+      value: 'Пн–Пт: 9:00–17:00',
+      href: null,
+    },
+    {
+      label: 'Менеджер',
+      value: 'Евгений Котков',
       href: null,
     },
   ];

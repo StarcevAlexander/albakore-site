@@ -8,12 +8,12 @@ import { RouterLink } from '@angular/router';
     <section class="dealers-page">
       <div class="container">
         <span class="section-label">Дилеры</span>
-        <h1 class="page-title">Официальные дилеры <em>Albakore</em></h1>
+        <h1 class="page-title">Официальные дилеры <em>RubMaster</em></h1>
         <p class="dealers-page__desc">
           Раздел находится в разработке. Для получения контактов дилеров
           обратитесь к нам напрямую.
         </p>
-        <a routerLink="/contacts" class="btn btn--primary"><span>Написать нам</span></a>
+        <a routerLink="/company-contacts" class="btn btn--primary"><span>Написать нам</span></a>
       </div>
     </section>
   `,
