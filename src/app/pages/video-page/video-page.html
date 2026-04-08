@@ -1,0 +1,23 @@
+<section class="video-page">
+  <div class="container">
+    <span class="section-label">Медиа</span>
+    <h1 class="section-title">Видео о катерах <em>Albakore</em></h1>
+
+    <div class="video-page__grid">
+      @for (video of videos; track video.title) {
+        <div class="video-page__item">
+          <div class="video-page__frame">
+            <iframe
+              [src]="video.url"
+              [title]="video.title"
+              frameborder="0"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+          <p class="video-page__title">{{ video.title }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

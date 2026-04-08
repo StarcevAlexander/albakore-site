@@ -1,0 +1,57 @@
+<div class="company-contacts">
+
+  <section class="company-contacts__hero">
+    <div class="container">
+      <span class="section-label">Контакты</span>
+      <h1 class="section-title">Контакты <em>компании</em></h1>
+    </div>
+  </section>
+
+  <section class="company-contacts__info">
+    <div class="container">
+      <div class="company-contacts__layout">
+
+        <div class="company-contacts__details">
+          @for (item of contacts; track item.label) {
+            <div class="contact-item">
+              <span class="contact-item__label">{{ item.label }}</span>
+              @if (item.href) {
+                <a [href]="item.href" class="contact-item__value contact-item__value--link">
+                  {{ item.value }}
+                </a>
+              } @else {
+                <span class="contact-item__value">{{ item.value }}</span>
+              }
+            </div>
+          }
+
+          <div class="company-contacts__requisites">
+            <h3>Реквизиты</h3>
+            <ul>
+              <li><span>Полное наименование</span><strong>ООО «Albakore»</strong></li>
+              <li><span>ИНН</span><strong>7842000000</strong></li>
+              <li><span>ОГРН</span><strong>1027800000000</strong></li>
+              <li><span>Расчётный счёт</span><strong>40702810000000000000</strong></li>
+              <li><span>Банк</span><strong>ПАО Сбербанк, г. Санкт-Петербург</strong></li>
+              <li><span>БИК</span><strong>044030653</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="company-contacts__map">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?ll=30.321&z=14&text=набережная+Обводного+канала+14+Санкт-Петербург"
+            title="Карта"
+            frameborder="0"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <app-contact-form></app-contact-form>
+
+</div>

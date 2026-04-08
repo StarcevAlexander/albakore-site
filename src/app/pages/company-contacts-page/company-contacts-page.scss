@@ -1,0 +1,114 @@
+.company-contacts {
+  background: var(--light-bg);
+  min-height: 100vh;
+
+  &__hero {
+    padding: 148px 0 56px;
+    background: var(--light-bg);
+  }
+
+  &__info {
+    padding: 0 0 80px;
+    background: var(--light-bg);
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__map {
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: #e0e0e0;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+
+  &__requisites {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+
+    h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 11px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+        font-size: 14px;
+        gap: 16px;
+
+        span {
+          color: var(--dark-mid);
+          opacity: 0.6;
+          flex-shrink: 0;
+        }
+
+        strong {
+          color: var(--dark);
+          font-weight: 500;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+
+  &__label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--red);
+  }
+
+  &__value {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--dark);
+
+    &--link {
+      transition: color 0.2s;
+      &:hover { color: var(--red); }
+    }
+  }
+}

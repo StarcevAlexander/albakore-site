@@ -1,0 +1,50 @@
+@if (model(); as boat) {
+  <section class="product-detail">
+    <div class="container">
+
+      <a routerLink="/catalog" class="product-detail__back">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 5l-7 7 7 7"/>
+        </svg>
+        Назад в каталог
+      </a>
+
+      <div class="product-detail__layout">
+        <div class="product-detail__image">
+          <img [src]="boat.img" [alt]="boat.name" loading="lazy">
+        </div>
+
+        <div class="product-detail__info">
+          <span class="section-label">Катер</span>
+          <h1 class="product-detail__title">{{ boat.name }}</h1>
+
+          @if (boat.description) {
+            <p class="product-detail__desc">{{ boat.description }}</p>
+          }
+
+          <ul class="product-detail__specs">
+            @for (spec of boat.specs; track spec.label) {
+              <li>
+                <span>{{ spec.label }}</span>
+                <strong>{{ spec.value }}</strong>
+              </li>
+            }
+          </ul>
+
+          <div class="product-detail__actions">
+            <a routerLink="/company-contacts" class="btn btn--primary"><span>Узнать стоимость</span></a>
+            <a routerLink="/contacts" class="btn btn--secondary"><span>Задать вопрос</span></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+} @else {
+  <section class="product-detail product-detail--not-found">
+    <div class="container">
+      <h1 class="section-title">Модель не найдена</h1>
+      <a routerLink="/catalog" class="btn btn--primary"><span>В каталог</span></a>
+    </div>
+  </section>
+}

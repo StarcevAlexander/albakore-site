@@ -1,10 +1,11 @@
 import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import Swiper from 'swiper';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 
 @Component({
   selector: 'app-hero-slider',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './hero-slider.html',
   styleUrl: './hero-slider.scss',
 })

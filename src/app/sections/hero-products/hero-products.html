@@ -12,8 +12,8 @@
         </h2>
         <p class="hero-product__desc">{{ product.desc }}</p>
         <div class="hero-product__btns">
-          <a [href]="product.catalogUrl" class="btn btn--primary"><span>В каталог</span></a>
-          <a href="#contacts" class="btn btn--secondary"><span>Где купить</span></a>
+          <a [routerLink]="product.catalogUrl" class="btn btn--primary"><span>В каталог</span></a>
+          <a routerLink="/dealers" class="btn btn--secondary"><span>Где купить</span></a>
         </div>
       </div>
     </div>

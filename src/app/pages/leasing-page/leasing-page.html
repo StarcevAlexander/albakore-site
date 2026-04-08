@@ -1,0 +1,48 @@
+<div class="leasing-page">
+
+  <section class="leasing-hero">
+    <div class="container">
+      <span class="section-label">Финансирование</span>
+      <h1 class="section-title">Купить катер <em>в лизинг</em></h1>
+      <p class="leasing-hero__lead">
+        Приобретайте катера Albakore для бизнеса или личного использования с минимальным
+        первоначальным взносом. Работаем с юридическими лицами, ИП и физическими лицами.
+      </p>
+
+      <div class="leasing-hero__stats">
+        @for (item of benefits; track item.title) {
+          <div class="leasing-stat">
+            <strong>{{ item.value }}</strong>
+            <span>{{ item.title }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="leasing-steps">
+    <div class="container">
+      <span class="section-label">Как это работает</span>
+      <h2 class="section-title">4 шага до вашего катера</h2>
+
+      <div class="leasing-steps__grid">
+        @for (step of steps; track step.num) {
+          <div class="leasing-step">
+            <div class="leasing-step__num">{{ step.num }}</div>
+            <h3 class="leasing-step__title">{{ step.title }}</h3>
+            <p class="leasing-step__desc">{{ step.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="leasing-cta">
+    <div class="container">
+      <h2 class="section-title">Рассчитайте <em>лизинговый платёж</em></h2>
+      <p>Оставьте заявку — менеджер подберёт оптимальные условия и рассчитает ежемесячный платёж под ваш бюджет.</p>
+      <a routerLink="/contacts" class="btn btn--primary"><span>Оставить заявку</span></a>
+    </div>
+  </section>
+
+</div>

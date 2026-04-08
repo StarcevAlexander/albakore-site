@@ -1,0 +1,25 @@
+<section class="service-page">
+  <div class="container">
+    <span class="section-label">Сервис</span>
+    <h1 class="section-title">Сервис и ремонт <em>Albakore</em></h1>
+    <p class="service-page__lead">
+      Собственный сервисный центр в Санкт-Петербурге. Обслуживаем все модели Albakore —
+      от планового ТО до сложного кузовного ремонта.
+    </p>
+
+    <div class="service-page__grid">
+      @for (item of services; track item.title) {
+        <div class="service-card">
+          <div class="service-card__icon">{{ item.icon }}</div>
+          <h3 class="service-card__title">{{ item.title }}</h3>
+          <p class="service-card__desc">{{ item.desc }}</p>
+        </div>
+      }
+    </div>
+
+    <div class="service-page__cta">
+      <p>Запишитесь на сервис или задайте вопрос специалисту</p>
+      <a routerLink="/contacts" class="btn btn--primary"><span>Записаться на сервис</span></a>
+    </div>
+  </div>
+</section>
