@@ -1,10 +1,13 @@
 .about {
-  background: var(--light-bg);
+  padding: 24px 0;
 
   &__inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-height: 560px;
+    background: var(--light-bg);
+    border-radius: 20px;
+    overflow: hidden;
 
     @media (max-width: 900px) {
       grid-template-columns: 1fr;

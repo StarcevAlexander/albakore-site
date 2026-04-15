@@ -1,0 +1,26 @@
+<section class="gp">
+  <div class="container">
+  <div class="gp__track">
+    <div class="swiper" #swiperEl>
+      <div class="swiper-wrapper">
+        @for (photo of photos; track photo.alt) {
+          <div class="swiper-slide gp__slide">
+            <img [src]="photo.src" [alt]="photo.alt" loading="lazy">
+          </div>
+        }
+      </div>
+    </div>
+
+    <button class="gp__arrow gp__arrow--prev" (click)="prev()" aria-label="Назад">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M12 4L6 10L12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="gp__arrow gp__arrow--next" (click)="next()" aria-label="Вперёд">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M8 4L14 10L8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+  </div>
+</section>

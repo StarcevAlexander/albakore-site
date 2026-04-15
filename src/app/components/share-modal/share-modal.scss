@@ -1,0 +1,109 @@
+.share-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.share-modal__panel {
+  background: #fff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 360px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.share-modal__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 24px 20px;
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.share-modal__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--light-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark-mid);
+  margin-bottom: 12px;
+}
+
+.share-modal__title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.share-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--light-bg);
+  color: var(--dark-mid);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+
+  &:hover { background: #e8e8ee; }
+}
+
+.share-modal__list {
+  padding: 8px 0;
+
+  li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    &:last-child { border-bottom: none; }
+  }
+}
+
+.share-modal__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font);
+  font-size: 15px;
+  color: var(--dark);
+  text-align: left;
+  transition: background 0.15s;
+
+  &:hover { background: var(--light-bg); }
+}
+
+.share-modal__item-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--light-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--dark-mid);
+
+  &--telegram  { background: #29a8eb; }
+  &--whatsapp  { background: #25d366; }
+  &--vk        { background: #0077ff; }
+  &--ok        { background: #f7931e; }
+}

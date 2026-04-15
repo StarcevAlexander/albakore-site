@@ -29,6 +29,10 @@
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
   }
 
+  &__img-wrap {
+    position: relative;
+  }
+
   &__img {
     aspect-ratio: 16/9;
     overflow: hidden;
@@ -93,5 +97,29 @@
   &__btn {
     flex: 1;
     min-width: 120px;
+  }
+
+  &__share {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(6px);
+    color: var(--dark);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: background 0.2s, transform 0.2s;
+
+    &:hover {
+      background: #fff;
+      transform: scale(1.08);
+    }
   }
 }

@@ -14,9 +14,6 @@ const RAW_VIDEOS = [
   { id: 'e850f5c0eab8f52ef7d07dfa5ec2fa91', title: 'Мобильный измельчитель RubMaster — обзор' },
   { id: 'e850f5c0eab8f52ef7d07dfa5ec2fa91', title: 'Мобильный измельчитель Моби-300' },
   { id: 'e850f5c0eab8f52ef7d07dfa5ec2fa91', title: 'Мобильный измельчитель Моби-250' },
-  { id: 'e850f5c0eab8f52ef7d07dfa5ec2fa91', title: 'Мобильный измельчитель Моби-200' },
-  { id: 'e850f5c0eab8f52ef7d07dfa5ec2fa91', title: 'Мобильный измельчитель Моби-160' },
-  { id: 'e850f5c0eab8f52ef7d07dfa5ec2fa91', title: 'Стационарный измельчитель МРГ-300Д/Е' },
 ];
 
 @Component({

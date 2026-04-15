@@ -1,22 +1,35 @@
 .hero-slider {
-  padding: 32px 0 0;
+  padding: 16px 0 0;
+}
+
+.hero-slider__scene {
+  position: relative;
+  padding-bottom: 180px;
+
+  @media (max-width: 900px) {
+    padding-bottom: 260px;
+  }
+
+  @media (max-width: 480px) {
+    padding-bottom: 300px;
+  }
 }
 
 .hero-slider__wrap {
   position: relative;
+  z-index: 0;
   width: 100%;
-  height: 700px;
+  height: 620px;
   overflow: hidden;
   border-radius: 20px;
 
   @media (max-width: 768px) {
-    height: 100svh;
-    min-height: 500px;
+    height: 56svh;
+    min-height: 320px;
     border-radius: 14px;
   }
 }
 
-// Swiper занимает весь блок
 .hero-slider .swiper {
   width: 100%;
   height: 100%;
@@ -33,82 +46,24 @@
   background-position: center top;
   background-repeat: no-repeat;
 
-  // тёмный оверлей
   &::after {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.3) 0%,
-      rgba(0, 0, 0, 0.5) 50%,
-      rgba(0, 0, 0, 0.7) 100%
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0.25) 60%,
+      rgba(0, 0, 0, 0.5) 100%
     );
   }
 }
 
-// Текст поверх слайдера
-.hero-slider__content {
-  position: absolute;
-  bottom: 80px;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  padding: 0 72px;
-
-  @media (max-width: 768px) {
-    bottom: 60px;
-    padding: 0 24px;
-  }
-}
-
-.hero-slider__label {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 10px;
-}
-
-.hero-slider__title {
-  font-size: clamp(32px, 5vw, 64px);
-  font-weight: 700;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  margin-bottom: 18px;
-
-  em {
-    font-style: normal;
-    color: var(--red);
-  }
-}
-
-.hero-slider__desc {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 520px;
-  line-height: 1.65;
-  margin-bottom: 32px;
-
-  @media (max-width: 768px) {
-    font-size: 14px;
-  }
-}
-
-.hero-slider__btns {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-// Navigation arrows
+// Navigation arrows — позиционируются относительно __scene
 .hero-slider__prev,
 .hero-slider__next {
   position: absolute;
-  top: 50%;
+  top: calc(620px / 2);
   transform: translateY(-50%);
   z-index: 20;
   width: 48px;
@@ -129,11 +84,6 @@
     background: rgba(255, 255, 255, 0.28);
   }
 
-  &.swiper-button-disabled {
-    opacity: 0.3;
-    cursor: default;
-  }
-
   @media (max-width: 768px) {
     display: none;
   }
@@ -142,29 +92,74 @@
 .hero-slider__prev { left: 24px; }
 .hero-slider__next { right: 24px; }
 
-// Pagination dots
-.hero-slider__dots {
+// ── Карточка поверх низа слайдера ──────────────────
+.hero-card {
   position: absolute;
-  bottom: 28px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  display: flex;
-  gap: 8px;
-}
-
-:host ::ng-deep .hero-slider__dot {
-  width: 32px;
-  height: 3px;
-  border-radius: 2px;
-  background: rgba(255, 255, 255, 0.35);
-  cursor: pointer;
-  transition: background 0.3s;
-  border: none;
-  padding: 0;
-  display: block;
-}
-
-:host ::ng-deep .hero-slider__dot--active {
+  bottom: 0;
+  left: 24px;
+  right: 24px;
   background: #fff;
+  border-radius: 20px;
+  padding: 28px 36px 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 24px 20px;
+    left: 12px;
+    right: 12px;
+    border-radius: 14px;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  &__title {
+    font-size: clamp(20px, 2.4vw, 32px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--dark);
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+
+    em {
+      font-style: normal;
+      color: var(--red);
+    }
+  }
+
+  &__btns {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  &__label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  &__desc {
+    font-size: 14px;
+    color: var(--dark-mid);
+    line-height: 1.7;
+  }
 }

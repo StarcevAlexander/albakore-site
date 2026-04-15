@@ -26,10 +26,6 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/service-page/service-page').then(m => m.ServicePage),
   },
   {
-    path: 'leasing',
-    loadComponent: () => import('./pages/leasing-page/leasing-page').then(m => m.LeasingPage),
-  },
-  {
     path: 'about',
     loadComponent: () => import('./pages/about-page/about-page').then(m => m.AboutPage),
   },
@@ -44,6 +40,14 @@ export const routes: Routes = [
   {
     path: 'company-contacts',
     loadComponent: () => import('./pages/company-contacts-page/company-contacts-page').then(m => m.CompanyContactsPage),
+  },
+  {
+    path: 'terms',
+    loadComponent: () => import('./pages/terms-page/terms-page').then(m => m.TermsPage),
+  },
+  {
+    path: 'privacy',
+    loadComponent: () => import('./pages/privacy-page/privacy-page').then(m => m.PrivacyPage),
   },
   {
     path: '**',

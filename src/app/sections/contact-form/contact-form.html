@@ -1,6 +1,6 @@
 <section class="contact-form" id="contacts">
-  <div class="contact-form__overlay">
-    <div class="container">
+  <div class="container">
+    <div class="contact-form__card">
       <div class="contact-form__layout">
         <div class="contact-form__info">
           <span class="section-label">Связаться с нами</span>
@@ -33,7 +33,20 @@
                 required
                 class="contact-form__input">
               <button type="submit" class="btn btn--primary"><span>Получить консультацию</span></button>
-              <p class="contact-form__privacy">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+              <label class="contact-form__agree" [class.contact-form__agree--error]="agreeError()">
+                <input
+                  type="checkbox"
+                  class="contact-form__agree-input"
+                  [ngModel]="agreed()"
+                  (ngModelChange)="agreed.set($event)"
+                  name="agreed">
+                <span class="contact-form__agree-box"></span>
+                <span class="contact-form__agree-text">
+                  Соглашаюсь на обработку персональных данных.
+                  <a routerLink="/privacy" class="contact-form__privacy-link">Политика конфиденциальности</a> •
+                  <a routerLink="/terms" class="contact-form__privacy-link">Пользовательское соглашение</a>
+                </span>
+              </label>
             </form>
           } @else {
             <div class="contact-form__success">

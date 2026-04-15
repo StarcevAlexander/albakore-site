@@ -1,11 +1,22 @@
 .contact-form {
-  background:
-    linear-gradient(rgba(12, 26, 36, 0.88), rgba(12, 26, 36, 0.88)),
-    url('//i.siteapi.org/7MKOXTDdjuLxMxKZi6Mi4LL7Qfs=/fit-in/1680x3360/center/top/filters:format(webp):upscale()/s.siteapi.org/fd0650dee05b0a9.ru/application-form/rkw23apqflcsgkwoo4o8gg8s8g8gk4')
-    center / cover no-repeat;
+  padding: 0 0 80px;
 
-  &__overlay {
-    padding: 100px 0;
+  &__card {
+    background:
+      linear-gradient(rgba(12, 26, 36, 0.88), rgba(12, 26, 36, 0.88)),
+      url('/images/mobi-300.webp')
+      center / cover no-repeat;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 80px 64px;
+
+    @media (max-width: 768px) {
+      padding: 60px 32px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 48px 20px;
+    }
   }
 
   &__layout {
@@ -66,11 +77,76 @@
     &:focus { border-color: rgba(255,255,255,0.5); }
   }
 
-  &__privacy {
+  &__agree {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+
+    &--error &-box {
+      animation: shake 0.4s ease;
+      border-color: #ff4d4d !important;
+      box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.3);
+    }
+  }
+
+  &__agree-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__agree-box {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    transition: background 0.2s, border-color 0.2s;
+
+    .contact-form__agree-input:checked + & {
+      background: var(--red);
+      border-color: var(--red);
+
+      &::after {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 6px;
+        border-left: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        transform: rotate(-45deg) translate(1px, -1px);
+      }
+    }
+  }
+
+  &__agree-text {
     font-size: 12px;
     color: rgba(255,255,255,0.4);
-    text-align: center;
-    line-height: 1.5;
+    line-height: 1.6;
+  }
+
+  &__privacy-link {
+    color: rgba(255,255,255,0.6);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s;
+
+    &:hover { color: #fff; }
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%       { transform: translateX(-5px); }
+    40%       { transform: translateX(5px); }
+    60%       { transform: translateX(-4px); }
+    80%       { transform: translateX(4px); }
   }
 
   &__success {

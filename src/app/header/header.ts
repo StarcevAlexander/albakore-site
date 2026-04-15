@@ -17,8 +17,6 @@ export class Header {
     { label: 'Фотогалерея', route: '/gallery' },
     { label: 'Видео', route: '/video' },
     { label: 'Сервис и ремонт', route: '/service' },
-    { label: 'Лизинг', route: '/leasing' },
-    { label: 'О компании', route: '/about' },
     { label: 'Дилеры', route: '/dealers' },
     { label: 'Контакты', route: '/company-contacts' },
   ];
