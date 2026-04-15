@@ -1,5 +1,13 @@
 // swiper css loaded via angular.json
 
+@font-face {
+  font-family: 'CannonadeBold';
+  src: url('/fonts/CannonadeBold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 // Swiper fade fix — слайды должны быть абсолютными при effect=fade
 .swiper-fade .swiper-slide {
   pointer-events: none;
@@ -70,9 +78,10 @@ img {
   align-items: center;
   justify-content: center;
   padding: 14px 36px;
-  font-family: var(--font);
-  font-size: 15px;
-  font-weight: 600;
+  font-family: 'CannonadeBold', var(--font), sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
   cursor: pointer;
   transition: background 0.25s ease, box-shadow 0.25s ease;
   border: none;

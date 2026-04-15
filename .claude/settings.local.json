@@ -7,7 +7,11 @@
       "Bash(curl -s -L -o public/images/shared/photo-1.webp \"https://i.siteapi.org/VLzj4cOkFNwo8rzsJoRFr4WfPo4=/fit-in/400x534/center/top/filters:fill\\(transparent\\)/s2.siteapi.org/9d06b80821fb43d/img/45nl36yuzda80cw0o0w4ckgk0os88o\")",
       "Bash(curl -s -L -o public/images/shared/photo-2.webp \"https://i.siteapi.org/g5d25GySRf81yZwAVkK0ZzFdzTw=/fit-in/400x534/center/top/filters:fill\\(transparent\\)/s2.siteapi.org/9d06b80821fb43d/img/ocm0962zwyog4ggsowksgo40oo000g\")",
       "Bash(curl -s -L -o public/images/shared/photo-3.webp \"https://i.siteapi.org/MTD2fqwwzNzzgoiFKL1tPOHFIfE=/center/top/filters:fill\\(white\\)/s2.siteapi.org/9d06b80821fb43d/img/nn0py7iw2mock8wcks4c8cwwcwk0sk\")",
-      "Bash(mkdir -p public/images/__TRACKED_VAR__)"
+      "Bash(mkdir -p public/images/__TRACKED_VAR__)",
+      "Bash(mkdir -p \"C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/fonts\")",
+      "Bash(curl -L -o \"C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/fonts/cannonade.zip\" \"https://befonts.com/downfile/69a49ac777e8ab45d72fc0d62c55d63c.156856\" -A \"Mozilla/5.0\")",
+      "Bash(unzip -o cannonade.zip)",
+      "Bash(curl -L -o \"C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/fonts/cannonade.zip\" \"https://allbestfonts.com/files/2_5373050503007570012.zip\" -A \"Mozilla/5.0\")"
     ]
   }
 }
