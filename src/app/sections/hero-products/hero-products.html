@@ -1,4 +1,5 @@
 <section class="hero-products">
+  <div class="container hero-products__inner">
   @for (product of products; track product.model) {
     <div class="hero-product" [class.hero-product--reversed]="product.reversed">
       <div class="hero-product__img-wrap">
@@ -18,4 +19,5 @@
       </div>
     </div>
   }
+  </div>
 </section>

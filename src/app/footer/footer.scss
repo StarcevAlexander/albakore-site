@@ -1,24 +1,36 @@
 .footer {
-  background: var(--dark);
-  color: rgba(255,255,255,0.65);
-  padding-top: 64px;
+  padding: 24px 0 32px;
+
+  &__card {
+    background: var(--dark-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 20px;
+    overflow: hidden;
+  }
 
   &__inner {
     display: grid;
     grid-template-columns: 1.5fr 1.5fr 1fr;
     gap: 48px;
-    padding-bottom: 48px;
+    padding: 56px 64px 48px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
       gap: 32px;
+      padding: 40px 28px 36px;
     }
   }
 
   &__brand {
     img { margin-bottom: 16px; }
-    p { font-size: 14px; line-height: 1.6; max-width: 300px; }
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 300px;
+      color: rgba(255,255,255,0.55);
+    }
   }
 
   &__col {
@@ -54,8 +66,12 @@
   }
 
   &__bottom {
-    padding: 20px 0;
+    padding: 20px 64px;
     font-size: 13px;
     color: rgba(255,255,255,0.35);
+
+    @media (max-width: 768px) {
+      padding: 18px 28px;
+    }
   }
 }

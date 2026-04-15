@@ -1,16 +1,15 @@
 .header {
   position: fixed;
-  top: 0;
+  top: 16px;
   left: 0;
   right: 0;
   z-index: 1000;
 
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: #0a1528;
-    z-index: -1;
+  &__card {
+    background: var(--dark-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 16px;
   }
 
   // ── Desktop layout: logo | nav (center) | phone ──
@@ -18,14 +17,14 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    padding: 8px 0;
-    min-height: 72px;
+    padding: 0 32px;
+    min-height: 64px;
     position: relative;
   }
 
   &__logo {
     flex: 0 0 auto;
-    img { height: 40px; width: auto; object-fit: contain; }
+    img { height: 36px; width: auto; object-fit: contain; }
   }
 
   // Nav занимает пространство между логотипом и телефоном
@@ -116,11 +115,13 @@
     flex-direction: column;
     align-items: flex-start;
     position: fixed;
-    top: 72px;
+    top: 96px; // 16px offset + 64px header + 16px gap
     left: 0;
     right: 0;
     bottom: 0;
-    background: #0a1528;
+    background: var(--dark-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     padding: 32px 24px;
     gap: 0;
     overflow-y: auto;

@@ -1,10 +1,20 @@
-.hero-products {}
+.hero-products {
+  padding: 40px 0;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}
 
 .hero-product {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 560px;
   background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
 
   &--reversed {
     background: var(--light-bg);

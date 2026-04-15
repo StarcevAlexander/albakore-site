@@ -1,31 +1,43 @@
 <section class="hero-slider">
+  <div class="container">
+    <div class="hero-slider__wrap">
 
-  <div class="swiper" #swiperEl>
-    <div class="swiper-wrapper">
-      @for (slide of slides; track $index) {
-        <div class="swiper-slide hero-slider__slide"
-             [style]="'background-image: url(' + slide + ')'">
+      <div class="swiper" #swiperEl>
+        <div class="swiper-wrapper">
+          @for (slide of slides; track $index) {
+            <div class="swiper-slide hero-slider__slide"
+                 [style]="'background-image: url(' + slide + ')'">
+            </div>
+          }
         </div>
-      }
-    </div>
-    <div class="hero-slider__dots"></div>
-  </div>
-
-  <div class="hero-slider__content">
-    <div class="container">
-      <p class="hero-slider__label">Производство рубильных машин и измельчителей веток</p>
-      <h1 class="hero-slider__title">
-        15 лет<br><em>профессионального качества</em>
-      </h1>
-      <p class="hero-slider__desc">
-        Более 200 машин работают в регионах России. Собственное производство
-        полного цикла — от лазерной резки до порошковой окраски.
-      </p>
-      <div class="hero-slider__btns">
-        <a routerLink="/catalog" class="btn btn--primary"><span>Модельный ряд</span></a>
-        <a routerLink="/company-contacts" class="btn btn--secondary-white"><span>Связаться с нами</span></a>
       </div>
+
+      <button class="hero-slider__prev" (click)="prev()" aria-label="Предыдущий слайд">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M12 4L6 10L12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button class="hero-slider__next" (click)="next()" aria-label="Следующий слайд">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M8 4L14 10L8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="hero-slider__content">
+        <p class="hero-slider__label">Производство рубильных машин и измельчителей веток</p>
+        <h1 class="hero-slider__title">
+          15 лет<br><em>профессионального качества</em>
+        </h1>
+        <p class="hero-slider__desc">
+          Более 200 машин работают в регионах России. Собственное производство
+          полного цикла — от лазерной резки до порошковой окраски.
+        </p>
+        <div class="hero-slider__btns">
+          <a routerLink="/catalog" class="btn btn--primary"><span>Модельный ряд</span></a>
+          <a routerLink="/company-contacts" class="btn btn--secondary-white"><span>Связаться с нами</span></a>
+        </div>
+      </div>
+
     </div>
   </div>
-
 </section>
