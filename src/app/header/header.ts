@@ -11,7 +11,7 @@ export class Header {
   menuOpen = signal(false);
   scrolled = signal(false);
 
-  private allLinks = [
+  navLinks = [
     { label: 'Главная', route: '/' },
     { label: 'Модельный ряд', route: '/catalog' },
     { label: 'Фотогалерея', route: '/gallery' },
@@ -23,9 +23,13 @@ export class Header {
     { label: 'Контакты', route: '/company-contacts' },
   ];
 
-  navRow1 = this.allLinks.slice(0, 5);
-  navRow2 = this.allLinks.slice(5);
-  navLinks = this.allLinks; // для мобильного меню
+  navDesktop = [
+    { label: 'Главная', route: '/' },
+    { label: 'Модельный ряд', route: '/catalog' },
+    { label: 'Фотогалерея', route: '/gallery' },
+    { label: 'Дилеры', route: '/dealers' },
+    { label: 'Контакты', route: '/company-contacts' },
+  ];
 
   @HostListener('window:scroll')
   onScroll() {

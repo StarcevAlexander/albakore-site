@@ -7,53 +7,45 @@
       <img src="logo.svg" alt="RubMaster" width="180" height="40">
     </a>
 
-    <!-- Desktop: 2-row nav centered between logo and phone -->
     <nav class="header__nav">
-      <div class="header__nav-row">
-        @for (link of navRow1; track link.label) {
-          <a
-            [routerLink]="link.route"
-            routerLinkActive="header__link--active"
-            [routerLinkActiveOptions]="{ exact: link.route === '/' }"
-            class="header__link"
-          >{{ link.label }}</a>
-        }
-      </div>
-      <div class="header__nav-row">
-        @for (link of navRow2; track link.label) {
-          <a
-            [routerLink]="link.route"
-            routerLinkActive="header__link--active"
-            [routerLinkActiveOptions]="{ exact: link.route === '/' }"
-            class="header__link"
-          >{{ link.label }}</a>
-        }
-      </div>
-    </nav>
-
-    <a href="tel:+79107789358" class="btn btn--primary header__phone"><span>+7 (910) 778-93-58</span></a>
-
-    <button class="header__burger" (click)="toggleMenu()" [class.header__burger--open]="menuOpen()" aria-label="Меню">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <!-- Mobile overlay nav -->
-    <nav class="header__nav-mobile" [class.header__nav-mobile--open]="menuOpen()">
-      @for (link of navLinks; track link.label) {
+      @for (link of navDesktop; track link.label) {
         <a
           [routerLink]="link.route"
           routerLinkActive="header__link--active"
           [routerLinkActiveOptions]="{ exact: link.route === '/' }"
           class="header__link"
-          (click)="closeMenu()"
         >{{ link.label }}</a>
       }
-      <a href="tel:+79107789358" class="btn btn--primary header__cta-mobile"><span>+7 (910) 778-93-58</span></a>
     </nav>
+
+    <div class="header__actions">
+      <a href="tel:+79107789358" class="btn btn--primary header__phone"><span>+7 (910) 778-93-58</span></a>
+
+      <button class="header__burger" (click)="toggleMenu()" [class.header__burger--open]="menuOpen()" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
 
   </div>
   </div>
   </div>
+
+  <!-- Burger overlay -->
+  <div class="header__overlay" [class.header__overlay--open]="menuOpen()" (click)="closeMenu()"></div>
+
+  <nav class="header__nav-mobile" [class.header__nav-mobile--open]="menuOpen()">
+    @for (link of navLinks; track link.label) {
+      <a
+        [routerLink]="link.route"
+        routerLinkActive="header__link--active"
+        [routerLinkActiveOptions]="{ exact: link.route === '/' }"
+        class="header__link"
+        (click)="closeMenu()"
+      >{{ link.label }}</a>
+    }
+    <a href="tel:+79107789358" class="btn btn--primary header__cta-mobile"><span>+7 (910) 778-93-58</span></a>
+  </nav>
+
 </header>
