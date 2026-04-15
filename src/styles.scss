@@ -165,11 +165,11 @@ img {
   display: block;
 }
 
-// Бренд-имя: Rub — наследует цвет контекста, Master — красный
+// Бренд-имя: Руб — красный, Мастер — наследует цвет контекста
 .rm-brand {
   font-style: normal;
-  .rm-rub { color: inherit; }
-  .rm-master { color: var(--red); }
+  .rm-rub { color: var(--red); }
+  .rm-master { color: inherit; }
 }
 
 .page-title {

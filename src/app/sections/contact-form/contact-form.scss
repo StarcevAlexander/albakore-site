@@ -4,7 +4,7 @@
   &__card {
     background:
       linear-gradient(rgba(12, 26, 36, 0.88), rgba(12, 26, 36, 0.88)),
-      url('/images/mobi-300.webp')
+      url('/images/mobi-300-1.webp')
       center / cover no-repeat;
     border-radius: 20px;
     overflow: hidden;
@@ -40,6 +40,39 @@
     color: rgba(255,255,255,0.75);
     line-height: 1.7;
     margin-top: 16px;
+  }
+
+  &__person {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  &__person-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    flex-shrink: 0;
+  }
+
+  &__person-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__person-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  &__person-role {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
   }
 
   &__form-wrap {

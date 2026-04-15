@@ -5,7 +5,6 @@ import { Video } from '../../sections/video/video';
 import { About } from '../../sections/about/about';
 import { GalleryPreview } from '../../sections/gallery-preview/gallery-preview';
 import { CatalogPreview } from '../../sections/catalog-preview/catalog-preview';
-import { CtaBlock } from '../../sections/cta-block/cta-block';
 import { ContactForm } from '../../sections/contact-form/contact-form';
 
 @Component({
@@ -17,7 +16,6 @@ import { ContactForm } from '../../sections/contact-form/contact-form';
     GalleryPreview,
     CatalogPreview,
     About,
-    CtaBlock,
     ContactForm,
   ],
   template: `

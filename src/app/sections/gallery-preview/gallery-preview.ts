@@ -14,14 +14,18 @@ export class GalleryPreview implements AfterViewInit {
   private swiper!: Swiper;
 
   photos = [
-    { src: 'images/mobi-300.webp', alt: 'Мобильный измельчитель Моби-300' },
-    { src: 'images/mobi-250.webp', alt: 'Мобильный измельчитель Моби-250' },
-    { src: 'images/mobi-200.webp', alt: 'Мобильный измельчитель Моби-200' },
-    { src: 'images/mobi-160.webp', alt: 'Мобильный измельчитель Моби-160' },
-    { src: 'images/mrg-300.webp', alt: 'Стационарный измельчитель МРГ-300' },
-    { src: 'images/mobi-300.webp', alt: 'Измельчитель Моби-300 — вид сбоку' },
-    { src: 'images/mobi-250.webp', alt: 'Измельчитель Моби-250 — в работе' },
-    { src: 'images/mobi-200.webp', alt: 'Измельчитель Моби-200 — крупный план' },
+    { src: 'images/mobi-300-1.webp', alt: 'Измельчитель Моби-300' },
+    { src: 'images/mobi-120-1.webp', alt: 'Измельчитель Моби-120' },
+    { src: 'images/mobi-250-1.webp', alt: 'Измельчитель Моби-250' },
+    { src: 'images/mobi-201-1.webp', alt: 'Измельчитель Моби-201' },
+    { src: 'images/mrg-300-1.webp', alt: 'Измельчитель МРГ-300' },
+    { src: 'images/mobi-161-1.webp', alt: 'Измельчитель Моби-161' },
+    { src: 'images/mobi-300-2.webp', alt: 'Измельчитель Моби-300 в работе' },
+    { src: 'images/mrg-250-1.webp', alt: 'Измельчитель МРГ-250 навесной' },
+    { src: 'images/mobi-261-1.webp', alt: 'Измельчитель Моби-261' },
+    { src: 'images/mobi-120-2.webp', alt: 'Измельчитель Моби-120 — вид сбоку' },
+    { src: 'images/mobi-250-2.webp', alt: 'Измельчитель Моби-250 в работе' },
+    { src: 'images/mobi-300-3.webp', alt: 'Измельчитель Моби-300 — крупный план' },
   ];
 
   ngAfterViewInit() {

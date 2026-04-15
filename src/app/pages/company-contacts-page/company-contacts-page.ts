@@ -3,7 +3,6 @@ import { ContactForm } from '../../sections/contact-form/contact-form';
 
 @Component({
   selector: 'app-company-contacts-page',
-  imports: [ContactForm],
   templateUrl: './company-contacts-page.html',
   styleUrl: './company-contacts-page.scss',
 })
