@@ -11,7 +11,29 @@
       "Bash(mkdir -p \"C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/fonts\")",
       "Bash(curl -L -o \"C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/fonts/cannonade.zip\" \"https://befonts.com/downfile/69a49ac777e8ab45d72fc0d62c55d63c.156856\" -A \"Mozilla/5.0\")",
       "Bash(unzip -o cannonade.zip)",
-      "Bash(curl -L -o \"C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/fonts/cannonade.zip\" \"https://allbestfonts.com/files/2_5373050503007570012.zip\" -A \"Mozilla/5.0\")"
+      "Bash(curl -L -o \"C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/fonts/cannonade.zip\" \"https://allbestfonts.com/files/2_5373050503007570012.zip\" -A \"Mozilla/5.0\")",
+      "Bash(cp \"../Сайт/Моби 120/4000_1846..jpg\" \"mobi-120-1.jpg\")",
+      "Bash(cp \"../Сайт/Моби 120/DSC_0830.JPG\" \"mobi-120-2.jpg\")",
+      "Bash(cp \"../Сайт/Моби 120/IMG_20210609_084429.jpg\" \"mobi-120-3.jpg\")",
+      "Bash(cp \"../Сайт/Моби 161/IMG_20211008_110850.jpg\" \"mobi-161-1.jpg\")",
+      "Bash(cp \"../Сайт/Моби 161/IMG_20211008_110913.jpg\" \"mobi-161-2.jpg\")",
+      "Bash(rm -f mobi-120-1.jpg mobi-120-2.jpg mobi-120-3.jpg mobi-161-1.jpg mobi-161-2.jpg mobi-201-1.jpg mobi-201-2.jpg mobi-250-1.jpg mobi-250-2.jpg mobi-261-1.jpg mobi-261-2.jpg mobi-300-1.jpg mobi-300-2.jpg mobi-300-3.jpg mrg-250-1.jpg mrg-250-2.jpg mrg-300-1.jpg workshop-1.jpg workshop-2.jpg workshop-3.jpg workshop-4.jpg)",
+      "Bash(rm -f mobi-160.webp mobi-200.webp mobi-250.webp mobi-300.webp mrg-300.webp)",
+      "Bash(rm -rf shared)",
+      "Bash(ffmpeg -y -i \"../Сайт/МРГ 300Д Е/DSC_0809.JPG\" -c:v libwebp -quality 75 -resize 1200 0 mrg-300-1.webp)",
+      "Bash(ffmpeg -y -i \"../Сайт/Моби 300/3b5f41d6-2259-44d3-88aa-8bcd1028df62.jpg\" -c:v libwebp -quality 75 -resize 1200 0 mobi-300-1.webp)",
+      "Bash(ffmpeg -y -i \"../Сайт/Моби 300/DSC_0359 2025.jpg\" -c:v libwebp -quality 75 -resize 1200 0 mobi-300-2.webp)",
+      "Bash(ffmpeg -y -i \"../Сайт/Моби 300/IMG_20200721_151454.jpg\" -c:v libwebp -quality 75 -resize 1200 0 mobi-300-3.webp)",
+      "Bash(ffmpeg -y -i \"../Сайт/МРГ 300Д Е/DSC_0809.JPG\" -c:v libwebp -quality 75 -vf \"scale=1200:-1\" mrg-300-1.webp)",
+      "Bash(ffmpeg -y -i \"../Сайт/Моби 300/3b5f41d6-2259-44d3-88aa-8bcd1028df62.jpg\" -c:v libwebp -quality 75 -vf \"scale=1200:-1\" mobi-300-1.webp)",
+      "Bash(ffmpeg -y -i \"../Сайт/Моби 300/DSC_0359 2025.jpg\" -c:v libwebp -quality 75 -vf \"scale=1200:-1\" mobi-300-2.webp)",
+      "Bash(ffmpeg -y -i \"../Сайт/Моби 300/IMG_20200721_151454.jpg\" -c:v libwebp -quality 75 -vf \"scale=1200:-1\" mobi-300-3.webp)",
+      "Bash(python3 -c ':*)",
+      "Bash(identify \"C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/logo.png\")",
+      "Bash(ffprobe -v quiet -show_entries stream=width,height -of csv=p=0 \"C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/logo.png\")",
+      "Bash(ffmpeg -y -i C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/logo.png -vf colorkey=white:0.2:0.1,scale=460:-1 C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/logo-transparent.webp)",
+      "Bash(ffmpeg -y -i C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/Сайт/logo_rubmaster.png -vf colorkey=0xFFFFFF:0.15:0.05,scale=460:-1 C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/logo-transparent.png)",
+      "Bash(ffmpeg -y -i C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/Сайт/i.jpg -vf 'crop=min\\(iw\\\\,ih\\):min\\(iw\\\\,ih\\),scale=160:160' -c:v libwebp -quality 85 C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/images/contact-person.webp)"
     ]
   }
 }

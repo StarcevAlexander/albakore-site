@@ -17,9 +17,9 @@ interface Dealer {
   template: `
     <section class="dealers-page">
       <div class="container">
-        <h1 class="page-title">Официальные дилеры <em class="rm-brand"><span class="rm-rub">RUB</span><span class="rm-master">MASTER</span></em></h1>
+        <h1 class="page-title">Официальные дилеры <em class="rm-brand"><span class="rm-rub">РУБ</span><span class="rm-master">МАСТЕР</span></em></h1>
         <p class="dealers-page__lead">
-          Приобретайте технику RubMaster у официальных дилеров в вашем регионе.
+          Приобретайте технику РубМастер у официальных дилеров в вашем регионе.
           Гарантия производителя, оригинальные запчасти, сервисное обслуживание.
         </p>
 
@@ -53,7 +53,7 @@ interface Dealer {
         </div>
 
         <div class="dealers-page__cta">
-          <p>Хотите стать официальным дилером RubMaster?</p>
+          <p>Хотите стать официальным дилером РубМастер?</p>
           <a routerLink="/company-contacts" class="btn btn--primary"><span>Связаться с нами</span></a>
         </div>
       </div>
