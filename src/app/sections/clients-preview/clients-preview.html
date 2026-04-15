@@ -6,9 +6,9 @@
     <div class="clients-preview__grid">
       @for (item of cases; track item.img) {
         <div class="clients-preview__card">
-          <div class="clients-preview__img-wrap">
+          <a class="clients-preview__img-wrap" [href]="item.img" target="_blank" rel="noopener">
             <img [src]="item.img" [alt]="item.model + ' — ' + item.location" loading="lazy">
-          </div>
+          </a>
           <div class="clients-preview__info">
             <span class="clients-preview__model">{{ item.model }}</span>
             <span class="clients-preview__location">{{ item.location }}</span>

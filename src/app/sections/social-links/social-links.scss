@@ -18,28 +18,34 @@
     justify-content: center;
     gap: 14px;
     padding: 22px 32px;
-    border-radius: 14px;
+    border-radius: 8px;
     color: #fff;
     text-decoration: none;
     font-size: 18px;
     font-weight: 700;
-    letter-spacing: 0.02em;
-    transition: filter 0.2s, transform 0.15s;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-family: 'CannonadeBold', sans-serif;
+    font-style: italic;
+    transform: skewX(-14deg);
+    transition: filter 0.2s, transform 0.2s;
 
     &:hover {
       filter: brightness(1.12);
-      transform: translateY(-2px);
+      transform: skewX(-14deg) translateY(-2px);
     }
 
     &:active {
-      transform: translateY(0);
+      transform: skewX(-14deg) translateY(0);
     }
 
     &--vk      { background: #4C75A3; }
     &--youtube { background: #FF0000; }
     &--rutube  { background: #0C1B29; }
 
-    svg {
+    svg, span {
+      display: inline-block;
+      transform: skewX(14deg);
       flex-shrink: 0;
     }
   }
