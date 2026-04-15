@@ -33,7 +33,13 @@
       "Bash(ffprobe -v quiet -show_entries stream=width,height -of csv=p=0 \"C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/logo.png\")",
       "Bash(ffmpeg -y -i C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/logo.png -vf colorkey=white:0.2:0.1,scale=460:-1 C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/logo-transparent.webp)",
       "Bash(ffmpeg -y -i C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/Сайт/logo_rubmaster.png -vf colorkey=0xFFFFFF:0.15:0.05,scale=460:-1 C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/logo-transparent.png)",
-      "Bash(ffmpeg -y -i C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/Сайт/i.jpg -vf 'crop=min\\(iw\\\\,ih\\):min\\(iw\\\\,ih\\),scale=160:160' -c:v libwebp -quality 85 C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/images/contact-person.webp)"
+      "Bash(ffmpeg -y -i C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/Сайт/i.jpg -vf 'crop=min\\(iw\\\\,ih\\):min\\(iw\\\\,ih\\),scale=160:160' -c:v libwebp -quality 85 C:/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/images/contact-person.webp)",
+      "Bash(python3 -c \"import docx\")",
+      "Bash(ffmpeg -y -i /c/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/images/logo.png -vf scale=360:-1 /c/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/images/logo.png.tmp.png)",
+      "Bash(identify /c/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/images/logo.png)",
+      "mcp__ide__getDiagnostics",
+      "Bash(grep -v \"^$\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); build=d['projects']['albakore-site']['architect']['build']; print\\(json.dumps\\(build.get\\('options',{}\\), indent=2\\)\\)\")"
     ]
   }
 }

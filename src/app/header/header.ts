@@ -16,7 +16,10 @@ export class Header {
     { label: 'Модельный ряд', route: '/catalog' },
     { label: 'Фотогалерея', route: '/gallery' },
     { label: 'Видео', route: '/video' },
+    { label: 'О компании', route: '/about' },
+    { label: 'Рассрочка', route: '/installment' },
     { label: 'Сервис и ремонт', route: '/service' },
+    { label: 'Документация', route: '/docs' },
     { label: 'Дилеры', route: '/dealers' },
     { label: 'Контакты', route: '/company-contacts' },
   ];
@@ -25,7 +28,7 @@ export class Header {
     { label: 'Главная', route: '/' },
     { label: 'Модельный ряд', route: '/catalog' },
     { label: 'Фотогалерея', route: '/gallery' },
-    { label: 'Дилеры', route: '/dealers' },
+    { label: 'Видео', route: '/video' },
     { label: 'Контакты', route: '/company-contacts' },
   ];
 

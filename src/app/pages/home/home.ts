@@ -6,6 +6,8 @@ import { About } from '../../sections/about/about';
 import { GalleryPreview } from '../../sections/gallery-preview/gallery-preview';
 import { CatalogPreview } from '../../sections/catalog-preview/catalog-preview';
 import { ContactForm } from '../../sections/contact-form/contact-form';
+import { ClientsPreview } from '../../sections/clients-preview/clients-preview';
+import { SocialLinks } from '../../sections/social-links/social-links';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +18,8 @@ import { ContactForm } from '../../sections/contact-form/contact-form';
     GalleryPreview,
     CatalogPreview,
     About,
+    ClientsPreview,
+    SocialLinks,
     ContactForm,
   ],
   template: `
@@ -49,6 +53,18 @@ import { ContactForm } from '../../sections/contact-form/contact-form';
       <app-about></app-about>
     } @placeholder {
       <div style="min-height: 480px"></div>
+    }
+
+    @defer (on viewport) {
+      <app-clients-preview></app-clients-preview>
+    } @placeholder {
+      <div style="min-height: 400px"></div>
+    }
+
+    @defer (on viewport) {
+      <app-social-links></app-social-links>
+    } @placeholder {
+      <div style="min-height: 120px"></div>
     }
 
     @defer (on viewport) {

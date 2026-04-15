@@ -4,8 +4,7 @@
   &__card {
     background:
       linear-gradient(rgba(12, 26, 36, 0.88), rgba(12, 26, 36, 0.88)),
-      url('/images/mobi-300-1.webp')
-      center / cover no-repeat;
+      var(--card-bg) center / cover no-repeat;
     border-radius: 20px;
     overflow: hidden;
     padding: 80px 64px;
@@ -101,7 +100,7 @@
     padding: 14px 18px;
     color: #fff;
     font-size: 15px;
-    font-family: var(--font);
+    font-family: var(--font), sans-serif;
     outline: none;
     transition: border-color 0.2s;
     width: 100%;

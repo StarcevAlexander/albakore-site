@@ -1,0 +1,40 @@
+<section class="docs-page">
+  <div class="container">
+    <h1 class="page-title">Документация <em class="rm-brand"><span class="rm-rub">РУБ</span><span class="rm-master">МАСТЕР</span></em></h1>
+    <p class="docs-page__lead">
+      Технические паспорта, руководства по эксплуатации и сертификаты на продукцию РубМастер.
+    </p>
+
+    <div class="docs-page__grid">
+      @for (doc of docs; track doc.file) {
+        <div class="doc-card">
+          <div class="doc-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8L14 2z"
+                stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="rgba(226,17,52,0.07)"/>
+              <polyline points="14 2 14 8 20 8"
+                stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="8" y1="13" x2="16" y2="13" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="8" y1="17" x2="13" y2="17" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="doc-card__ext">PDF</span>
+          </div>
+          <div class="doc-card__body">
+            <span class="doc-card__type">{{ doc.type }}</span>
+            <h3 class="doc-card__title">{{ doc.title }}</h3>
+            <p class="doc-card__desc">{{ doc.desc }}</p>
+          </div>
+          <button class="doc-card__btn btn btn--primary" (click)="openDoc(doc.file)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <polyline points="15 3 21 3 21 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Открыть</span>
+          </button>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -15,13 +15,13 @@ export class HeroSlider implements AfterViewInit {
   private swiper!: Swiper;
 
   slides = [
-    'images/mobi-300-1.webp',
-    'images/mobi-250-1.webp',
-    'images/mobi-201-1.webp',
-    'images/mobi-161-1.webp',
-    'images/mrg-300-1.webp',
-    'images/mobi-120-1.webp',
-    'images/mrg-250-1.webp',
+    '/images/mobi-300-1.webp',
+    '/images/mobi-250-1.webp',
+    '/images/mobi-201-1.webp',
+    '/images/mobi-161-1.webp',
+    '/images/mrg-300-1.webp',
+    '/images/mobi-120-1.webp',
+    '/images/mrg-250-1.webp',
   ];
 
   ngAfterViewInit() {

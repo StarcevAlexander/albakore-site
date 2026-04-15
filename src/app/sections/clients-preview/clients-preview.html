@@ -1,0 +1,21 @@
+<section class="clients-preview">
+  <div class="container">
+    <span class="section-label">Машины в работе</span>
+    <h2 class="section-title">Техника у наших клиентов</h2>
+
+    <div class="clients-preview__grid">
+      @for (item of cases; track item.img) {
+        <div class="clients-preview__card">
+          <div class="clients-preview__img-wrap">
+            <img [src]="item.img" [alt]="item.model + ' — ' + item.location" loading="lazy">
+          </div>
+          <div class="clients-preview__info">
+            <span class="clients-preview__model">{{ item.model }}</span>
+            <span class="clients-preview__location">{{ item.location }}</span>
+            <span class="clients-preview__year">{{ item.year }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
