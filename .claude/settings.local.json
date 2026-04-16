@@ -46,7 +46,8 @@
       "Bash(xargs grep *)",
       "Bash(xargs wc *)",
       "Bash(file /c/Users/master/WebstormProjects/in_work/rubmaster/albakore-site/public/images/*.webp)",
-      "Read(//mnt/c/Users/master/**)"
+      "Read(//mnt/c/Users/master/**)",
+      "Skill(update-config)"
     ]
   }
 }
