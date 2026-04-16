@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { MetaService } from '../../services/meta.service';
-import { ContactForm } from '../../sections/contact-form/contact-form';
 
 @Component({
   selector: 'app-company-contacts-page',
