@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PartnerCard } from '../../components/partner-card/partner-card';
+import { MetaService } from '../../services/meta.service';
 
 interface Step {
   num: number;
@@ -33,6 +34,14 @@ interface Partner {
   styleUrl: './installment-page.scss',
 })
 export class InstallmentPage {
+  constructor() {
+    inject(MetaService).set({
+      title: 'Рассрочка на измельчители древесины',
+      description: 'Приобретайте измельчители древесины Промимпорт в рассрочку без банков и скрытых комиссий. Фиксированная цена в рублях, индивидуальный график платежей.',
+      keywords: 'рассрочка измельчитель, купить рубильную машину в рассрочку',
+    });
+  }
+
   readonly steps: Step[] = [
     {
       num: 1,

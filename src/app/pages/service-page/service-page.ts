@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { MetaService } from '../../services/meta.service';
 
 @Component({
   selector: 'app-service-page',
@@ -8,6 +9,14 @@ import { RouterLink } from '@angular/router';
   styleUrl: './service-page.scss',
 })
 export class ServicePage {
+  constructor() {
+    inject(MetaService).set({
+      title: 'Сервис и ремонт измельчителей древесины',
+      description: 'Изготовление рубильных дисков, ремонт измельчителей, поставка металлопродукции, лазерная резка, гибка и сварка. ООО «Промсервис», г. Владимир.',
+      keywords: 'ремонт измельчителя, рубильный диск, лазерная резка Владимир, сервис рубильная машина',
+    });
+  }
+
   services = [
     {
       icon: '⚙️',

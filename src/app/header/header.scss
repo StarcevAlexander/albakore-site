@@ -33,7 +33,27 @@
 
   &__logo {
     flex: 0 0 auto;
-    img { height: 36px; width: auto; object-fit: contain; }
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  &__logo-icon {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  &__logo-text {
+    font-family: 'CannonadeBold', var(--font), sans-serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
 
   &__nav {

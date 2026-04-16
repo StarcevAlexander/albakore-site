@@ -6,8 +6,13 @@
         <div class="swiper" #swiperEl>
           <div class="swiper-wrapper">
             @for (slide of slides; track $index) {
-              <div class="swiper-slide hero-slider__slide"
-                   [style]="'background-image: url(' + slide + ')'">
+              <div class="swiper-slide hero-slider__slide">
+                <img
+                  [src]="slide"
+                  alt="Измельчитель древесины Промимпорт"
+                  class="hero-slider__img"
+                  [loading]="$first ? 'eager' : 'lazy'"
+                  [attr.fetchpriority]="$first ? 'high' : null">
               </div>
             }
           </div>

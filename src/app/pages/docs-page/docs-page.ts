@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { MetaService } from '../../services/meta.service';
 
 interface DocItem {
   title: string;
@@ -13,6 +14,14 @@ interface DocItem {
   styleUrl: './docs-page.scss',
 })
 export class DocsPage {
+  constructor() {
+    inject(MetaService).set({
+      title: 'Документация и паспорта на измельчители',
+      description: 'Технические паспорта, инструкции по эксплуатации и сертификаты на измельчители древесины Промимпорт. Скачайте документацию онлайн.',
+      keywords: 'паспорт измельчителя, документация рубильная машина, инструкция Моби',
+    });
+  }
+
   readonly docs: DocItem[] = [
     {
       title: 'Технический паспорт Моби-300',

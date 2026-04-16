@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeroSlider } from '../../sections/hero-slider/hero-slider';
 import { HeroProducts } from '../../sections/hero-products/hero-products';
 import { Video } from '../../sections/video/video';
@@ -8,6 +8,7 @@ import { CatalogPreview } from '../../sections/catalog-preview/catalog-preview';
 import { ContactForm } from '../../sections/contact-form/contact-form';
 import { ClientsPreview } from '../../sections/clients-preview/clients-preview';
 import { SocialLinks } from '../../sections/social-links/social-links';
+import { MetaService } from '../../services/meta.service';
 
 @Component({
   selector: 'app-home',
@@ -74,4 +75,13 @@ import { SocialLinks } from '../../sections/social-links/social-links';
     }
   `,
 })
-export class Home {}
+export class Home {
+  constructor() {
+    inject(MetaService).set({
+      title: 'Прицепные измельчители древесины МОБИ — надёжность, проверенная в деле',
+      description: 'Производство рубильных машин и прицепных измельчителей древесины. 15 лет профессионального качества. Более 200 машин работают в регионах России.',
+      keywords: 'измельчитель древесины, рубильная машина, измельчитель веток, Моби, МРГ, Промимпорт, ООО Промсервис',
+      image: 'https://rubmaster.ru/images/mobi-300-1.webp',
+    });
+  }
+}

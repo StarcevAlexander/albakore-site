@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { MetaService } from '../../services/meta.service';
 import { ContactForm } from '../../sections/contact-form/contact-form';
 
 @Component({
@@ -7,6 +8,14 @@ import { ContactForm } from '../../sections/contact-form/contact-form';
   styleUrl: './company-contacts-page.scss',
 })
 export class CompanyContactsPage {
+  constructor() {
+    inject(MetaService).set({
+      title: 'Контакты — ООО «Промсервис», г. Владимир',
+      description: 'Адрес, телефон и e-mail ООО «Промсервис». г. Владимир, ул. Полины Осипенко, 58. Режим работы: Пн–Пт 9:00–17:00.',
+      keywords: 'контакты Промсервис, адрес Владимир, телефон измельчитель',
+    });
+  }
+
   contacts = [
     {
       label: 'Телефон',

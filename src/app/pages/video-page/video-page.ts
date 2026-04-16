@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { MetaService } from '../../services/meta.service';
 
 interface VideoItem {
   url: SafeResourceUrl;
@@ -49,6 +50,13 @@ const RAW_VIDEOS = [
 })
 export class VideoPage {
   private sanitizer = inject(DomSanitizer);
+  constructor() {
+    inject(MetaService).set({
+      title: 'Видео — измельчители в работе',
+      description: 'Видеообзоры и обучающие ролики по эксплуатации измельчителей древесины Промимпорт. Запуск, регулировка, работа на объектах.',
+      keywords: 'видео измельчитель, рубильная машина видео, Моби видео',
+    });
+  }
 
   videos: VideoItem[] = RAW_VIDEOS.map(v => ({
     title: v.title,

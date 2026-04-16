@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PartnerCard, PartnerCardData } from '../../components/partner-card/partner-card';
+import { MetaService } from '../../services/meta.service';
 
 @Component({
   selector: 'app-dealers-page',
@@ -82,6 +83,14 @@ import { PartnerCard, PartnerCardData } from '../../components/partner-card/part
   `],
 })
 export class DealersPage {
+  constructor() {
+    inject(MetaService).set({
+      title: 'Официальные дилеры',
+      description: 'Официальные дилеры измельчителей древесины Промимпорт в регионах России. Гарантия производителя, оригинальные запчасти, сервисное обслуживание.',
+      keywords: 'дилеры рубильных машин, купить измельчитель регионы, официальный дилер Промимпорт',
+    });
+  }
+
   dealers: PartnerCardData[] = [
     {
       name: 'ООО «БОРУС-СТ»',
