@@ -1,6 +1,7 @@
 <section class="catalog" id="catalog">
   <div class="container">
-    <h1 class="page-title">Модельный ряд <em class="rm-brand"><span class="rm-rub">РУБ</span><span class="rm-master">МАСТЕР</span></em></h1>
+    <h1 class="page-title">Модельный ряд <br> измельчителей древесины <br><em class="rm-brand"><span
+      class="rm-rub">РУБ</span><span class="rm-master">МАСТЕР</span></em></h1>
 
     <div class="catalog__grid">
       @for (model of models; track model.slug) {
@@ -11,18 +12,17 @@
             </a>
             <button class="catalog-card__share" (click)="openShare(model.slug, model.name)" aria-label="Поделиться">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M18 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM18 22a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path
+                  d="M18 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM18 22a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" />
               </svg>
             </button>
           </div>
           <div class="catalog-card__body">
             <h3 class="catalog-card__name">{{ model.name }}</h3>
-            <ul class="catalog-card__specs">
-              <li><span>Длина</span><strong>{{ model.length }}</strong></li>
-              <li><span>Вместимость</span><strong>{{ model.capacity }}</strong></li>
-              <li><span>Материал</span><strong>{{ model.material }}</strong></li>
-            </ul>
+            @if (model.description) {
+              <p class="catalog-card__desc">{{ model.description }}</p>
+            }
             <div class="catalog-card__actions">
               <a [routerLink]="['/catalog', model.slug]" class="btn btn--secondary catalog-card__btn">
                 <span>Подробнее</span>
