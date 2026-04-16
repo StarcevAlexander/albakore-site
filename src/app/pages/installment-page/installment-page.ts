@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { PartnerCard } from '../../components/partner-card/partner-card';
 
 interface Step {
   num: number;
@@ -27,7 +28,7 @@ interface Partner {
 
 @Component({
   selector: 'app-installment-page',
-  imports: [RouterLink],
+  imports: [RouterLink, PartnerCard],
   templateUrl: './installment-page.html',
   styleUrl: './installment-page.scss',
 })
