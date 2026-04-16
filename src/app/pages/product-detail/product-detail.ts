@@ -1,11 +1,13 @@
-import { Component, inject, input, computed, signal, DOCUMENT } from '@angular/core';
+import { Component, inject, input, computed, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CatalogService } from '../../services/catalog.service';
-import { ShareModal } from '../../components/share-modal/share-modal';
+import { ShareButton } from '../../components/share-button/share-button';
+import { InstallmentBadge } from '../../components/installment-badge/installment-badge';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-product-detail',
-  imports: [RouterLink, ShareModal],
+  imports: [RouterLink, ShareButton, InstallmentBadge],
   templateUrl: './product-detail.html',
   styleUrl: './product-detail.scss',
 })
@@ -17,7 +19,6 @@ export class ProductDetail {
   model = computed(() => this.catalogService.getBySlug(this.slug()));
 
   activePhoto = signal<string | null>(null);
-  shareOpen = signal(false);
 
   shareUrl = computed(() => this.doc.location.href);
   shareTitle = computed(() => this.model()?.name ?? '');

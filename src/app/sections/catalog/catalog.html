@@ -10,13 +10,8 @@
             <a [routerLink]="['/catalog', model.slug]" class="catalog-card__img">
               <img [src]="model.img" [alt]="model.name" loading="lazy">
             </a>
-            <button class="catalog-card__share" (click)="openShare(model.slug, model.name)" aria-label="Поделиться">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M18 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM18 22a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-              </svg>
-            </button>
+            <app-installment-badge />
+            <app-share-button [url]="shareBaseUrl + '/catalog/' + model.slug" [title]="model.name" />
           </div>
           <div class="catalog-card__body">
             <h3 class="catalog-card__name">{{ model.name }}</h3>
@@ -38,6 +33,3 @@
   </div>
 </section>
 
-@if (shareUrl()) {
-  <app-share-modal [url]="shareUrl()!" [title]="shareTitle()" (closed)="closeShare()" />
-}

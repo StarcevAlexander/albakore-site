@@ -29,8 +29,8 @@ export class CompanyContactsPage {
       href: null,
     },
     {
-      label: 'Менеджер',
-      value: 'Евгений Котков',
+      label: 'Консультант компании\n',
+      value: 'Александр Тимофеев',
       href: null,
     },
   ];
