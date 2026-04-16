@@ -56,7 +56,7 @@ export const CATALOG_ITEMS: BoatModel[] = [
     slug: 'mobi-250',
     name: 'Моби-250',
     img: '/images/mobi-250-1.webp',
-    photos: ['/images/mobi-250-2.webp', '/images/mobi-261-1.webp', '/images/mobi-261-2.webp'],
+    photos: ['/images/mobi-250-2.webp'],
     length: '250 мм',
     capacity: 'Прицепной',
     material: 'Дизель',
