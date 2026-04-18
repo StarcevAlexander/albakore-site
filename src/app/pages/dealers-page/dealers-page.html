@@ -1,0 +1,23 @@
+<section class="dealers-page">
+  <div class="container">
+    <h1 class="page-title">Официальные дилеры</h1>
+    <p class="dealers-page__subtitle">
+      Официальные дилеры по реализации измельчителей древесины
+    </p>
+    <p class="dealers-page__lead">
+      Приобретайте технику РубМастер у официальных дилеров в вашем регионе.
+      Гарантия производителя, оригинальные запчасти, сервисное обслуживание.
+    </p>
+
+    <div class="dealers-page__grid">
+      @for (dealer of dealers; track dealer.name) {
+        <app-partner-card [partner]="dealer" />
+      }
+    </div>
+
+    <div class="dealers-page__cta">
+      <p>Хотите стать официальным дилером по продажам измельчителей древесины <em class="rm-brand"><span class="rm-rub">РУБ</span><span class="rm-master">МАСТЕР</span></em>?</p>
+      <a routerLink="/company-contacts" class="btn btn--primary"><span>Связаться с нами</span></a>
+    </div>
+  </div>
+</section>
