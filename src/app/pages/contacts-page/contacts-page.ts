@@ -5,8 +5,8 @@ import { MetaService } from '../../services/meta.service';
 @Component({
   selector: 'app-contacts-page',
   imports: [ContactForm],
-  template: `<div class="page-offset"><app-contact-form></app-contact-form></div>`,
-  styles: [`.page-offset { padding-top: 48px; }`],
+  templateUrl: './contacts-page.html',
+  styleUrl: './contacts-page.scss',
 })
 export class ContactsPage {
   constructor() {
