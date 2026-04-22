@@ -20,6 +20,13 @@ export class ContactForm {
   public readonly agreeError = signal(false);
   public readonly sendError = signal(false);
 
+  public reset() {
+    this.sent.set(false);
+    this.name.set('');
+    this.phone.set('');
+    this.agreed.set(false);
+  }
+
   public submit() {
     if (!this.name() || !this.phone()) return;
     if (!this.agreed()) {
