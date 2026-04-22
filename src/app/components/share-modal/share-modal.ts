@@ -1,4 +1,4 @@
-import { Component, input, output, inject } from '@angular/core';
+import { Component, input, output, inject, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
@@ -7,13 +7,25 @@ import { DOCUMENT } from '@angular/common';
   templateUrl: './share-modal.html',
   styleUrl: './share-modal.scss',
 })
-export class ShareModal {
+export class ShareModal implements AfterViewInit, OnDestroy {
   url = input.required<string>();
   title = input<string>('');
   closed = output<void>();
 
   copied = false;
   private doc = inject(DOCUMENT);
+  private el = inject(ElementRef);
+
+  ngAfterViewInit() {
+    this.doc.body.appendChild(this.el.nativeElement);
+  }
+
+  ngOnDestroy() {
+    const node = this.el.nativeElement as HTMLElement;
+    if (node.parentNode === this.doc.body) {
+      this.doc.body.removeChild(node);
+    }
+  }
 
   close() { this.closed.emit(); }
 

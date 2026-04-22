@@ -205,4 +205,10 @@
     align-items: center;
     justify-content: center;
   }
+
+  &__error {
+    color: #ff6b6b;
+    font-size: 13px;
+    margin-top: 8px;
+  }
 }

@@ -39,7 +39,12 @@
                 name="phone"
                 required
                 class="contact-form__input">
-              <button type="submit" class="btn btn--primary"><span>Получить консультацию</span></button>
+              <button type="submit" class="btn btn--primary" [disabled]="sending()">
+                <span>{{ sending() ? 'Отправка...' : 'Получить консультацию' }}</span>
+              </button>
+              @if (sendError()) {
+                <p class="contact-form__error">Ошибка отправки. Пожалуйста, попробуйте снова.</p>
+              }
               <label class="contact-form__agree" [class.contact-form__agree--error]="agreeError()">
                 <input
                   type="checkbox"
