@@ -23,7 +23,7 @@ export class DocsPage {
     });
   }
 
-  readonly docs: DocItem[] = [
+  public readonly docs: DocItem[] = [
     {
       title: 'Декларация ТР ТС',
       desc: 'Декларация о соответствии требованиям технических регламентов Таможенного союза.',

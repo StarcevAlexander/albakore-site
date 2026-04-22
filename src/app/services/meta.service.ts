@@ -16,10 +16,10 @@ export interface PageMeta {
 
 @Injectable({ providedIn: 'root' })
 export class MetaService {
-  private meta = inject(Meta);
-  private titleService = inject(Title);
-  private router = inject(Router);
-  private doc = inject(DOCUMENT);
+  private readonly meta = inject(Meta);
+  private readonly titleService = inject(Title);
+  private readonly router = inject(Router);
+  private readonly doc = inject(DOCUMENT);
 
   public set(data: PageMeta): void {
     const url = BASE_URL + this.router.url;

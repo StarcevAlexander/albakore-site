@@ -14,5 +14,5 @@ export interface PartnerCardData {
   styleUrl: './partner-card.scss',
 })
 export class PartnerCard {
-  public partner = input.required<PartnerCardData>();
+  public readonly partner = input.required<PartnerCardData>();
 }

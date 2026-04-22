@@ -8,13 +8,13 @@ import { ShareModal } from '../share-modal/share-modal';
   styleUrl: './share-button.scss',
 })
 export class ShareButton {
-  public url = input<string>('');
-  public title = input<string>('');
+  public readonly url = input<string>('');
+  public readonly title = input<string>('');
 
-  private doc = inject(DOCUMENT);
-  public open = signal(false);
+  private readonly doc = inject(DOCUMENT);
+  public readonly open = signal(false);
 
-  public resolvedUrl = computed(() =>
+  public readonly resolvedUrl = computed(() =>
     this.url() || this.doc.location.href
   );
 }

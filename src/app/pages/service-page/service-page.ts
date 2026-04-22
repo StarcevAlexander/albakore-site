@@ -17,7 +17,7 @@ export class ServicePage {
     });
   }
 
-  public services = [
+  public readonly services = [
     {
       icon: '⚙️',
       title: 'Изготовление рубильных дисков',

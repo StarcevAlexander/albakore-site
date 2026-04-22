@@ -14,7 +14,7 @@ export class HeroSlider implements AfterViewInit {
 
   private swiper!: Swiper;
 
-  public slides = [
+  public readonly slides = [
     '/images/mobi-300-1.webp',
     '/images/mobi-250-1.webp',
     '/images/mobi-201-1.webp',

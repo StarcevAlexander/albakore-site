@@ -13,7 +13,7 @@ export class GalleryPreview implements AfterViewInit {
 
   private swiper!: Swiper;
 
-  public photos = [
+  public readonly photos = [
     { src: '/images/mobi-300-1.webp', alt: 'Измельчитель Моби-300' },
     { src: '/images/mobi-120-1.webp', alt: 'Измельчитель Моби-120' },
     { src: '/images/mobi-250-1.webp', alt: 'Измельчитель Моби-250' },

@@ -19,7 +19,7 @@ export class DealersPage {
     });
   }
 
-  public dealers: PartnerCardData[] = [
+  public readonly dealers: PartnerCardData[] = [
     {
       name: 'ООО «БОРУС-СТ»',
       city: 'г. Киров',

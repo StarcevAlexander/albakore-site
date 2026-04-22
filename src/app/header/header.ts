@@ -8,10 +8,10 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './header.scss',
 })
 export class Header {
-  public menuOpen = signal(false);
-  public scrolled = signal(false);
+  public readonly menuOpen = signal(false);
+  public readonly scrolled = signal(false);
 
-  public navLinks = [
+  public readonly navLinks = [
     { label: 'Главная', route: '/' },
     { label: 'Модельный ряд', route: '/catalog' },
     { label: 'Фотогалерея', route: '/gallery' },
@@ -24,7 +24,7 @@ export class Header {
     { label: 'Контакты', route: '/company-contacts' },
   ];
 
-  public navDesktop = [
+  public readonly navDesktop = [
     { label: 'Главная', route: '/' },
     { label: 'Модельный ряд', route: '/catalog' },
     { label: 'Фотогалерея', route: '/gallery' },

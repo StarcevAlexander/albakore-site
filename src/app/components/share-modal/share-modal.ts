@@ -8,13 +8,13 @@ import { DOCUMENT } from '@angular/common';
   styleUrl: './share-modal.scss',
 })
 export class ShareModal implements AfterViewInit, OnDestroy {
-  public url = input.required<string>();
-  public title = input<string>('');
-  public closed = output<void>();
+  public readonly url = input.required<string>();
+  public readonly title = input<string>('');
+  public readonly closed = output<void>();
 
   public copied = false;
-  private doc = inject(DOCUMENT);
-  private el = inject(ElementRef);
+  private readonly doc = inject(DOCUMENT);
+  private readonly el = inject(ElementRef);
 
   ngAfterViewInit() {
     this.doc.body.appendChild(this.el.nativeElement);

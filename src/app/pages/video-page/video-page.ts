@@ -49,7 +49,7 @@ const RAW_VIDEOS = [
   styleUrl: './video-page.scss',
 })
 export class VideoPage {
-  private sanitizer = inject(DomSanitizer);
+  private readonly sanitizer = inject(DomSanitizer);
   constructor() {
     inject(MetaService).set({
       title: 'Видео — измельчители в работе',
@@ -59,7 +59,7 @@ export class VideoPage {
     });
   }
 
-  public videos: VideoItem[] = RAW_VIDEOS.map(v => ({
+  public readonly videos: VideoItem[] = RAW_VIDEOS.map(v => ({
     title: v.title,
     url: this.sanitizer.bypassSecurityTrustResourceUrl(v.embed),
   }));

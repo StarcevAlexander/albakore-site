@@ -11,7 +11,7 @@ import { Navigation } from 'swiper/modules';
 export class Gallery implements AfterViewInit {
   @ViewChild('swiperEl') private swiperEl!: ElementRef;
 
-  public photos = [
+  public readonly photos = [
     { src: '/images/mobi-300-1.webp', alt: 'Измельчитель Моби-300' },
     { src: '/images/mobi-120-1.webp', alt: 'Измельчитель Моби-120' },
     { src: '/images/mobi-250-1.webp', alt: 'Измельчитель Моби-250' },

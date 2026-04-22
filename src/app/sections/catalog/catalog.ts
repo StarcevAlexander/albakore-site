@@ -11,9 +11,9 @@ import { InstallmentBadge } from '../../components/installment-badge/installment
   styleUrl: './catalog.scss',
 })
 export class Catalog {
-  private catalogService = inject(CatalogService);
-  private doc = inject(DOCUMENT);
-  public models = this.catalogService.models;
+  private readonly catalogService = inject(CatalogService);
+  private readonly doc = inject(DOCUMENT);
+  public readonly models = this.catalogService.models;
 
   get shareBaseUrl() {
     return this.doc.location.origin;

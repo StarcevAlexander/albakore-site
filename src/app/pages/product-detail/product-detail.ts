@@ -12,25 +12,25 @@ import { MetaService } from '../../services/meta.service';
   styleUrl: './product-detail.scss',
 })
 export class ProductDetail {
-  private catalogService = inject(CatalogService);
-  private doc = inject(DOCUMENT);
-  private metaService = inject(MetaService);
+  private readonly catalogService = inject(CatalogService);
+  private readonly doc = inject(DOCUMENT);
+  private readonly metaService = inject(MetaService);
 
-  public slug = input<string>('');
-  public model = computed(() => this.catalogService.getBySlug(this.slug()));
+  public readonly slug = input<string>('');
+  public readonly model = computed(() => this.catalogService.getBySlug(this.slug()));
 
-  public activePhoto = signal<string | null>(null);
+  public readonly activePhoto = signal<string | null>(null);
 
-  public shareUrl = computed(() => this.doc.location.href);
-  public shareTitle = computed(() => this.model()?.name ?? '');
+  public readonly shareUrl = computed(() => this.doc.location.href);
+  public readonly shareTitle = computed(() => this.model()?.name ?? '');
 
-  public allPhotos = computed(() => {
+  public readonly allPhotos = computed(() => {
     const m = this.model();
     if (!m) return [];
     return [m.img, ...(m.photos ?? [])];
   });
 
-  public currentPhoto = computed(() =>
+  public readonly currentPhoto = computed(() =>
     this.activePhoto() ?? this.model()?.img ?? ''
   );
 

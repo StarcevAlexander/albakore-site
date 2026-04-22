@@ -10,15 +10,15 @@ import { EmailjsService } from '../../services/emailjs.service';
   styleUrl: './contact-form.scss',
 })
 export class ContactForm {
-  private emailjs = inject(EmailjsService);
+  private readonly emailjs = inject(EmailjsService);
 
-  public name = signal('');
-  public phone = signal('');
-  public sent = signal(false);
-  public sending = signal(false);
-  public agreed = signal(false);
-  public agreeError = signal(false);
-  public sendError = signal(false);
+  public readonly name = signal('');
+  public readonly phone = signal('');
+  public readonly sent = signal(false);
+  public readonly sending = signal(false);
+  public readonly agreed = signal(false);
+  public readonly agreeError = signal(false);
+  public readonly sendError = signal(false);
 
   public submit() {
     if (!this.name() || !this.phone()) return;
