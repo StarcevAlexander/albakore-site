@@ -12,15 +12,15 @@ import { EmailjsService } from '../../services/emailjs.service';
 export class ContactForm {
   private emailjs = inject(EmailjsService);
 
-  name = signal('');
-  phone = signal('');
-  sent = signal(false);
-  sending = signal(false);
-  agreed = signal(false);
-  agreeError = signal(false);
-  sendError = signal(false);
+  public name = signal('');
+  public phone = signal('');
+  public sent = signal(false);
+  public sending = signal(false);
+  public agreed = signal(false);
+  public agreeError = signal(false);
+  public sendError = signal(false);
 
-  submit() {
+  public submit() {
     if (!this.name() || !this.phone()) return;
     if (!this.agreed()) {
       this.agreeError.set(true);

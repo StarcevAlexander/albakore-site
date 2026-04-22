@@ -10,11 +10,11 @@ import { Autoplay, EffectFade } from 'swiper/modules';
   styleUrl: './hero-slider.scss',
 })
 export class HeroSlider implements AfterViewInit {
-  @ViewChild('swiperEl') swiperEl!: ElementRef;
+  @ViewChild('swiperEl') private swiperEl!: ElementRef;
 
   private swiper!: Swiper;
 
-  slides = [
+  public slides = [
     '/images/mobi-300-1.webp',
     '/images/mobi-250-1.webp',
     '/images/mobi-201-1.webp',
@@ -37,6 +37,6 @@ export class HeroSlider implements AfterViewInit {
     });
   }
 
-  prev() { this.swiper.slidePrev(); }
-  next() { this.swiper.slideNext(); }
+  public prev() { this.swiper.slidePrev(); }
+  public next() { this.swiper.slideNext(); }
 }

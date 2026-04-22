@@ -9,5 +9,5 @@ import { CATALOG_ITEMS } from '../../data/catalog.data';
   styleUrl: './catalog-preview.scss',
 })
 export class CatalogPreview {
-  items = CATALOG_ITEMS.slice(0, 6);
+  public items = CATALOG_ITEMS.slice(0, 6);
 }

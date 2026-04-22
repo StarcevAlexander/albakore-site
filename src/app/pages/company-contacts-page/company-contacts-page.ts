@@ -15,7 +15,7 @@ export class CompanyContactsPage {
     });
   }
 
-  contacts = [
+  public contacts = [
     {
       label: 'Телефон',
       value: '+7 (910) 778-93-58',

@@ -11,7 +11,7 @@ export class TermsPage {
   constructor() {
     inject(MetaService).set({
       title: 'Пользовательское соглашение',
-      description: 'Пользовательское соглашение сайта Промимпорт.',
+      description: 'Пользовательское соглашение сайта Промсервис.',
       noIndex: true,
     });
   }

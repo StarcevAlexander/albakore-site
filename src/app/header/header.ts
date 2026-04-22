@@ -8,10 +8,10 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './header.scss',
 })
 export class Header {
-  menuOpen = signal(false);
-  scrolled = signal(false);
+  public menuOpen = signal(false);
+  public scrolled = signal(false);
 
-  navLinks = [
+  public navLinks = [
     { label: 'Главная', route: '/' },
     { label: 'Модельный ряд', route: '/catalog' },
     { label: 'Фотогалерея', route: '/gallery' },
@@ -24,7 +24,7 @@ export class Header {
     { label: 'Контакты', route: '/company-contacts' },
   ];
 
-  navDesktop = [
+  public navDesktop = [
     { label: 'Главная', route: '/' },
     { label: 'Модельный ряд', route: '/catalog' },
     { label: 'Фотогалерея', route: '/gallery' },
@@ -33,15 +33,15 @@ export class Header {
   ];
 
   @HostListener('window:scroll')
-  onScroll() {
+  public onScroll() {
     this.scrolled.set(window.scrollY > 50);
   }
 
-  toggleMenu() {
+  public toggleMenu() {
     this.menuOpen.update(v => !v);
   }
 
-  closeMenu() {
+  public closeMenu() {
     this.menuOpen.set(false);
   }
 }

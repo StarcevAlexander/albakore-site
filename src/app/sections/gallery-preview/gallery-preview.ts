@@ -9,11 +9,11 @@ import { Autoplay } from 'swiper/modules';
   styleUrl: './gallery-preview.scss',
 })
 export class GalleryPreview implements AfterViewInit {
-  @ViewChild('swiperEl') swiperEl!: ElementRef;
+  @ViewChild('swiperEl') private swiperEl!: ElementRef;
 
   private swiper!: Swiper;
 
-  photos = [
+  public photos = [
     { src: '/images/mobi-300-1.webp', alt: 'Измельчитель Моби-300' },
     { src: '/images/mobi-120-1.webp', alt: 'Измельчитель Моби-120' },
     { src: '/images/mobi-250-1.webp', alt: 'Измельчитель Моби-250' },
@@ -44,6 +44,6 @@ export class GalleryPreview implements AfterViewInit {
     });
   }
 
-  prev() { this.swiper.slidePrev(); }
-  next() { this.swiper.slideNext(); }
+  public prev() { this.swiper.slidePrev(); }
+  public next() { this.swiper.slideNext(); }
 }

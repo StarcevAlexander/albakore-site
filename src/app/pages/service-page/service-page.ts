@@ -17,7 +17,7 @@ export class ServicePage {
     });
   }
 
-  services = [
+  public services = [
     {
       icon: '⚙️',
       title: 'Изготовление рубильных дисков',

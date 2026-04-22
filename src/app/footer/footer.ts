@@ -8,5 +8,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './footer.scss',
 })
 export class Footer {
-  year = new Date().getFullYear();
+  public year = new Date().getFullYear();
 }

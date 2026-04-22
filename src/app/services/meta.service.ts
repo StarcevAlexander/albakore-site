@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 const BASE_URL = 'https://rubmaster.ru';
 const DEFAULT_IMG = `${BASE_URL}/images/mobi-300-1.webp`;
-const SITE_NAME = 'Промимпорт';
+const SITE_NAME = 'Промсервис';
 
 export interface PageMeta {
   title: string;
@@ -21,7 +21,7 @@ export class MetaService {
   private router = inject(Router);
   private doc = inject(DOCUMENT);
 
-  set(data: PageMeta): void {
+  public set(data: PageMeta): void {
     const url = BASE_URL + this.router.url;
     const image = data.image ?? DEFAULT_IMG;
     const fullTitle = `${data.title} | ${SITE_NAME}`;

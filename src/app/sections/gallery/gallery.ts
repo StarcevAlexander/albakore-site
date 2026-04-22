@@ -9,9 +9,9 @@ import { Navigation } from 'swiper/modules';
   styleUrl: './gallery.scss',
 })
 export class Gallery implements AfterViewInit {
-  @ViewChild('swiperEl') swiperEl!: ElementRef;
+  @ViewChild('swiperEl') private swiperEl!: ElementRef;
 
-  photos = [
+  public photos = [
     { src: '/images/mobi-300-1.webp', alt: 'Измельчитель Моби-300' },
     { src: '/images/mobi-120-1.webp', alt: 'Измельчитель Моби-120' },
     { src: '/images/mobi-250-1.webp', alt: 'Измельчитель Моби-250' },

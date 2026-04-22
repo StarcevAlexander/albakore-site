@@ -8,11 +8,11 @@ import { DOCUMENT } from '@angular/common';
   styleUrl: './share-modal.scss',
 })
 export class ShareModal implements AfterViewInit, OnDestroy {
-  url = input.required<string>();
-  title = input<string>('');
-  closed = output<void>();
+  public url = input.required<string>();
+  public title = input<string>('');
+  public closed = output<void>();
 
-  copied = false;
+  public copied = false;
   private doc = inject(DOCUMENT);
   private el = inject(ElementRef);
 
@@ -27,50 +27,50 @@ export class ShareModal implements AfterViewInit, OnDestroy {
     }
   }
 
-  close() { this.closed.emit(); }
+  public close() { this.closed.emit(); }
 
-  onBackdrop(e: MouseEvent) {
+  public onBackdrop(e: MouseEvent) {
     if ((e.target as HTMLElement).classList.contains('share-modal__backdrop')) {
       this.close();
     }
   }
 
-  copyLink() {
+  public copyLink() {
     navigator.clipboard.writeText(this.url()).then(() => {
       this.copied = true;
       setTimeout(() => this.copied = false, 2000);
     });
   }
 
-  shareEmail() {
+  public shareEmail() {
     this.doc.defaultView!.open(
       `mailto:?subject=${encodeURIComponent(this.title())}&body=${encodeURIComponent(this.url())}`,
       '_blank'
     );
   }
 
-  shareTelegram() {
+  public shareTelegram() {
     this.doc.defaultView!.open(
       `https://t.me/share/url?url=${encodeURIComponent(this.url())}&text=${encodeURIComponent(this.title())}`,
       '_blank'
     );
   }
 
-  shareWhatsApp() {
+  public shareWhatsApp() {
     this.doc.defaultView!.open(
       `https://wa.me/?text=${encodeURIComponent(this.title() + ' ' + this.url())}`,
       '_blank'
     );
   }
 
-  shareVk() {
+  public shareVk() {
     this.doc.defaultView!.open(
       `https://vk.com/share.php?url=${encodeURIComponent(this.url())}`,
       '_blank'
     );
   }
 
-  shareOk() {
+  public shareOk() {
     this.doc.defaultView!.open(
       `https://connect.ok.ru/offer?url=${encodeURIComponent(this.url())}`,
       '_blank'

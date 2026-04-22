@@ -11,7 +11,7 @@ export class PrivacyPage {
   constructor() {
     inject(MetaService).set({
       title: 'Политика конфиденциальности',
-      description: 'Политика конфиденциальности сайта Промимпорт.',
+      description: 'Политика конфиденциальности сайта Промсервис.',
       noIndex: true,
     });
   }

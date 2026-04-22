@@ -16,21 +16,21 @@ export class ProductDetail {
   private doc = inject(DOCUMENT);
   private metaService = inject(MetaService);
 
-  slug = input<string>('');
-  model = computed(() => this.catalogService.getBySlug(this.slug()));
+  public slug = input<string>('');
+  public model = computed(() => this.catalogService.getBySlug(this.slug()));
 
-  activePhoto = signal<string | null>(null);
+  public activePhoto = signal<string | null>(null);
 
-  shareUrl = computed(() => this.doc.location.href);
-  shareTitle = computed(() => this.model()?.name ?? '');
+  public shareUrl = computed(() => this.doc.location.href);
+  public shareTitle = computed(() => this.model()?.name ?? '');
 
-  allPhotos = computed(() => {
+  public allPhotos = computed(() => {
     const m = this.model();
     if (!m) return [];
     return [m.img, ...(m.photos ?? [])];
   });
 
-  currentPhoto = computed(() =>
+  public currentPhoto = computed(() =>
     this.activePhoto() ?? this.model()?.img ?? ''
   );
 
@@ -51,7 +51,7 @@ export class ProductDetail {
     });
   }
 
-  setPhoto(src: string) {
+  public setPhoto(src: string) {
     this.activePhoto.set(src);
   }
 
@@ -66,8 +66,12 @@ export class ProductDetail {
       name: m.name,
       description: m.description ?? '',
       image: `https://rubmaster.ru${m.img}`,
-      brand: { '@type': 'Brand', name: 'Промимпорт' },
-      manufacturer: { '@type': 'Organization', name: 'ООО «Промсервис»', url: 'https://rubmaster.ru' },
+      brand: { '@type': 'Brand', name: 'Промсервис' },
+      manufacturer: {
+        '@type': 'Organization',
+        name: 'ООО «Промсервис»',
+        url: 'https://rubmaster.ru',
+      },
       offers: {
         '@type': 'Offer',
         priceCurrency: 'RUB',

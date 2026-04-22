@@ -17,7 +17,7 @@ export interface BoatModel {
 export class CatalogService {
   readonly models: BoatModel[] = CATALOG_ITEMS;
 
-  getBySlug(slug: string): BoatModel | undefined {
+  public getBySlug(slug: string): BoatModel | undefined {
     return this.models.find(m => m.slug === slug);
   }
 }

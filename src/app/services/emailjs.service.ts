@@ -7,7 +7,7 @@ const PUBLIC_KEY = 'NtAvBi9vDPIZ8Ky_9';
 
 @Injectable({ providedIn: 'root' })
 export class EmailjsService {
-  send(name: string, phone: string): Promise<void> {
+  public send(name: string, phone: string): Promise<void> {
     return emailjs
       .send(SERVICE_ID, TEMPLATE_ID, { name, phone }, { publicKey: PUBLIC_KEY })
       .then(() => undefined);

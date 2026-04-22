@@ -13,7 +13,7 @@ interface ClientCase {
   styleUrl: './clients-preview.scss',
 })
 export class ClientsPreview {
-  readonly cases: ClientCase[] = [
+  public readonly cases: ClientCase[] = [
     { img: '/images/clients/client-1.webp', model: 'Моби-200',  location: 'В/ч Московская область', year: 2019 },
     { img: '/images/clients/client-2.webp', model: 'Моби-250',  location: 'РЖД, г. Ярославль',      year: 2019 },
     { img: '/images/clients/client-3.webp', model: 'МРГ-250',   location: 'г. Камешково',            year: 2015 },

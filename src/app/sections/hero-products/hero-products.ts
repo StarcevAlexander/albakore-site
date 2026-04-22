@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './hero-products.scss',
 })
 export class HeroProducts {
-  products = [
+  public products = [
     {
       badge: 'Флагман серии',
       title: 'Прицепной измельчитель',

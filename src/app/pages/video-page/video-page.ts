@@ -53,12 +53,13 @@ export class VideoPage {
   constructor() {
     inject(MetaService).set({
       title: 'Видео — измельчители в работе',
-      description: 'Видеообзоры и обучающие ролики по эксплуатации измельчителей древесины Промимпорт. Запуск, регулировка, работа на объектах.',
+      description:
+        'Видеообзоры и обучающие ролики по эксплуатации измельчителей древесины Промсервис. Запуск, регулировка, работа на объектах.',
       keywords: 'видео измельчитель, рубильная машина видео, Моби видео',
     });
   }
 
-  videos: VideoItem[] = RAW_VIDEOS.map(v => ({
+  public videos: VideoItem[] = RAW_VIDEOS.map(v => ({
     title: v.title,
     url: this.sanitizer.bypassSecurityTrustResourceUrl(v.embed),
   }));
