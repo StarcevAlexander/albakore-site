@@ -5,7 +5,7 @@
       <div class="swiper-wrapper">
         @for (photo of photos; track photo.alt) {
           <div class="swiper-slide gp__slide">
-            <img [src]="photo.src" [alt]="photo.alt" loading="lazy">
+            <img [src]="photo.src" [alt]="photo.alt" width="780" height="260" loading="eager">
           </div>
         }
       </div>

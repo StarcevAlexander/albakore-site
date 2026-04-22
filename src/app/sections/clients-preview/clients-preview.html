@@ -7,7 +7,7 @@
       @for (item of cases; track item.img) {
         <div class="clients-preview__card">
           <a class="clients-preview__img-wrap" [href]="item.img" target="_blank" rel="noopener">
-            <img [src]="item.img" [alt]="item.model + ' — ' + item.location" loading="lazy">
+            <img [src]="item.img" [alt]="item.model + ' — ' + item.location" width="400" height="300" loading="eager">
           </a>
           <div class="clients-preview__info">
             <span class="clients-preview__model">{{ item.model }}</span>

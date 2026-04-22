@@ -3,7 +3,7 @@
   @for (product of products; track product.model) {
     <div class="hero-product" [class.hero-product--reversed]="product.reversed">
       <div class="hero-product__img-wrap">
-        <img [src]="product.img" [alt]="product.model" loading="lazy">
+        <img [src]="product.img" [alt]="product.model" width="800" height="600" loading="eager">
       </div>
       <div class="hero-product__content">
         <span class="hero-product__badge">{{ product.badge }}</span>
