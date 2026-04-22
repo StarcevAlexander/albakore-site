@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import emailjs from '@emailjs/browser';
 
 const SERVICE_ID = 'service_wq3ndk7';
-const TEMPLATE_ID = 'template_nrv1ty6';
+const TEMPLATE_ID = 'template_nq6y6al';
 const PUBLIC_KEY = 'NtAvBi9vDPIZ8Ky_9';
 
 @Injectable({ providedIn: 'root' })
