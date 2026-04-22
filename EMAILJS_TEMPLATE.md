@@ -4,8 +4,8 @@
 
 | Поле          | Значение                          |
 |---------------|-----------------------------------|
-| **Subject**   | Новая заявка с сайта rubmaster.ru |
-| **From Name** | РубМастер — сайт                 |
+| **Subject**   | Новая заявка с сайта промсервис33.ру |
+| **From Name** | Промсервис33 — сайт                 |
 | **Reply To**  | `{{reply_to}}`                   |
 
 ---
@@ -41,7 +41,7 @@
           <!-- HEADER -->
           <tr>
             <td class="email-header" style="background:#C1171D;padding:32px 40px;text-align:center;">
-              <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.7);letter-spacing:2px;text-transform:uppercase;">РубМастер · ООО «Промсервис»</p>
+              <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.7);letter-spacing:2px;text-transform:uppercase;">промсервис33.ру · ООО «Промсервис»</p>
               <h1 style="margin:8px 0 0;font-size:24px;font-weight:700;color:#ffffff;">Новая заявка с сайта</h1>
             </td>
           </tr>
@@ -93,7 +93,7 @@
             <td class="email-footer" style="padding:20px 40px 28px;border-top:1px solid #f0f0f0;text-align:center;">
               <p style="margin:0;font-size:12px;color:#aaa;line-height:1.6;">
                 Это автоматическое уведомление с сайта
-                <a href="https://rubmaster.ru" style="color:#C1171D;text-decoration:none;">rubmaster.ru</a><br>
+                <a href="https://промсервис33.ру" style="color:#C1171D;text-decoration:none;">промсервис33.ру</a><br>
                 ООО «Промсервис» · г. Владимир, ул. Полины Осипенко, 58
               </p>
             </td>
@@ -124,5 +124,5 @@
 1. В EmailJS Dashboard → **Email Templates** → **Create New Template**
 2. Переключиться в режим **HTML Editor**
 3. Вставить код выше
-4. В поле **Subject** написать: `Новая заявка с сайта rubmaster.ru — {{name}}`
+4. В поле **Subject** написать: `Новая заявка с сайта промсервис33.ру — {{name}}`
 5. Сохранить → скопировать **Template ID** → вставить в `emailjs.service.ts`
