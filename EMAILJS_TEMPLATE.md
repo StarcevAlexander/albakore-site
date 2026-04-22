@@ -19,17 +19,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Новая заявка</title>
+  <style>
+    @media only screen and (max-width: 600px) {
+      .email-outer  { padding: 16px 0 !important; }
+      .email-wrap   { padding: 0 12px !important; }
+      .email-header { padding: 24px 20px !important; }
+      .email-header h1 { font-size: 20px !important; }
+      .email-body   { padding: 24px 20px !important; }
+      .email-footer { padding: 16px 20px 24px !important; }
+      .cta-btn      { padding: 12px 20px !important; font-size: 14px !important; width: 100% !important; box-sizing: border-box !important; text-align: center !important; }
+    }
+  </style>
 </head>
 <body style="margin:0;padding:0;background:#f4f6f8;font-family:'Segoe UI',Arial,sans-serif;">
 
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f6f8;padding:40px 0;">
+  <table width="100%" cellpadding="0" cellspacing="0" class="email-outer" style="background:#f4f6f8;padding:40px 0;">
     <tr>
-      <td align="center">
-        <table width="560" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+      <td align="center" class="email-wrap" style="padding:0 16px;">
+        <table width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
 
           <!-- HEADER -->
           <tr>
-            <td style="background:#C1171D;padding:32px 40px;text-align:center;">
+            <td class="email-header" style="background:#C1171D;padding:32px 40px;text-align:center;">
               <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.7);letter-spacing:2px;text-transform:uppercase;">РубМастер · ООО «Промсервис»</p>
               <h1 style="margin:8px 0 0;font-size:24px;font-weight:700;color:#ffffff;">Новая заявка с сайта</h1>
             </td>
@@ -37,7 +48,7 @@
 
           <!-- BODY -->
           <tr>
-            <td style="padding:36px 40px;">
+            <td class="email-body" style="padding:36px 40px;">
 
               <p style="margin:0 0 24px;font-size:15px;color:#555;line-height:1.6;">
                 Поступила новая заявка на консультацию. Свяжитесь с клиентом в ближайшее время.
@@ -66,6 +77,7 @@
                 <tr>
                   <td align="center">
                     <a href="tel:{{phone}}"
+                       class="cta-btn"
                        style="display:inline-block;background:#C1171D;color:#ffffff;font-size:15px;font-weight:600;text-decoration:none;padding:14px 36px;border-radius:10px;letter-spacing:0.3px;">
                       Позвонить клиенту
                     </a>
@@ -78,7 +90,7 @@
 
           <!-- FOOTER -->
           <tr>
-            <td style="padding:20px 40px 28px;border-top:1px solid #f0f0f0;text-align:center;">
+            <td class="email-footer" style="padding:20px 40px 28px;border-top:1px solid #f0f0f0;text-align:center;">
               <p style="margin:0;font-size:12px;color:#aaa;line-height:1.6;">
                 Это автоматическое уведомление с сайта
                 <a href="https://rubmaster.ru" style="color:#C1171D;text-decoration:none;">rubmaster.ru</a><br>
