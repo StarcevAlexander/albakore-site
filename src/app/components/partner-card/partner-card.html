@@ -4,7 +4,7 @@
   <p class="partner-card__address">{{ partner().address }}</p>
   <div class="partner-card__phones">
     @for (phone of partner().phones; track phone.href) {
-      <a [href]="phone.href">{{ phone.label }}</a>
+      <a [attr.href]="phone.href">{{ phone.label }}</a>
     }
   </div>
 </div>
