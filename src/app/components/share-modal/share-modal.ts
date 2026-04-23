@@ -36,10 +36,32 @@ export class ShareModal implements AfterViewInit, OnDestroy {
   }
 
   public copyLink() {
-    navigator.clipboard.writeText(this.url()).then(() => {
-      this.copied = true;
-      setTimeout(() => this.copied = false, 2000);
-    });
+    const text = this.url();
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text)
+        .then(() => this.markCopied())
+        .catch(() => this.fallbackCopy(text));
+    } else {
+      this.fallbackCopy(text);
+    }
+  }
+
+  private fallbackCopy(text: string) {
+    const el = this.doc.createElement('textarea');
+    el.value = text;
+    el.style.position = 'fixed';
+    el.style.opacity = '0';
+    this.doc.body.appendChild(el);
+    el.focus();
+    el.select();
+    this.doc.execCommand('copy');
+    this.doc.body.removeChild(el);
+    this.markCopied();
+  }
+
+  private markCopied() {
+    this.copied = true;
+    setTimeout(() => this.copied = false, 2000);
   }
 
   public shareEmail() {

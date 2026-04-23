@@ -5,8 +5,8 @@ import { MetaService } from '../../services/meta.service';
 @Component({
   selector: 'app-about-page',
   imports: [About],
-  template: `<div class="page-offset"><app-about></app-about></div>`,
-  styles: [`.page-offset { padding-top: 70px; }`],
+  templateUrl: './about-page.html',
+  styleUrl: './about-page.scss',
 })
 export class AboutPage {
   constructor() {
