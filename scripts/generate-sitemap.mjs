@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const outDir = join(__dirname, '../dist/albakore-site/browser');
 
-const BASE_URL = 'https://rubmaster.ru';
+const BASE_URL = 'https://promservis33.ru';
 const TODAY = new Date().toISOString().split('T')[0];
 
 // ── Routes ────────────────────────────────────────────────────────────────────
