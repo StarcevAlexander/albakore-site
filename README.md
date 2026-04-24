@@ -1,59 +1,104 @@
-# AlbakoreSite
+# AlbakoreSite — promservis33.ru
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.3.
+Angular 21 SPA. Хостинг: reg.ru (ISPmanager, тариф Host-0, пользователь u3475417).
 
-## Development server
+---
 
-To start a local development server, run:
+## Локальная разработка
 
 ```bash
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Открыть `http://localhost:4200/`
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Сборка
 
 ```bash
-ng generate --help
+npm run build
 ```
 
-## Building
+Артефакты попадают в `dist/albakore-site/browser/`. Именно **содержимое этой папки** заливается на сервер.
 
-To build the project run:
+---
+
+## Деплой на reg.ru (ручной)
+
+### 1. Собрать проект
 
 ```bash
-ng build
+npm run build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### 2. Открыть файловый менеджер ISPmanager
 
-## Running unit tests
+Панель управления: `https://server188.hosting.reg.ru:1500/`
+Логин: `u3475417`
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Перейти: **Файловый менеджер → `www/promservis33.ru/`**
 
-```bash
-ng test
+### 3. Загрузить файлы
+
+Загрузить **всё содержимое** `dist/albakore-site/browser/` в корень `/www/promservis33.ru/` на сервере.
+
+Важно: загружать содержимое папки `browser/`, а не саму папку целиком.
+
+Структура на сервере должна быть:
+```
+www/promservis33.ru/
+├── index.html
+├── .htaccess
+├── main-XXXXXX.js
+├── styles-XXXXXX.css
+├── images/
+├── fonts/
+├── docs/
+└── ...
 ```
 
-## Running end-to-end tests
+### 4. Проверить .htaccess
 
-For end-to-end (e2e) testing, run:
+Файл `.htaccess` входит в сборку автоматически (лежит в `public/.htaccess`).
+Он обеспечивает корректную работу Angular-роутинга — при обновлении страниц вида `/catalog/mobi-120` сервер не возвращает 404, а отдаёт `index.html`.
 
-```bash
-ng e2e
+Содержимое файла:
+```apache
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## HTTPS-редирект
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Не добавлять HTTP→HTTPS редирект в `.htaccess`** — на reg.ru SSL завершается на прокси, Apache всегда видит запросы как HTTP, и любой `RewriteRule` на основе `%{HTTPS}` или `%{HTTP:X-Forwarded-Proto}` создаёт бесконечную петлю.
+
+HTTP→HTTPS редирект настраивается через ISPmanager:
+**Сайты → promservis33.ru → Принудительный HTTPS** (чекбокс в настройках SSL).
+
+---
+
+## Решённые проблемы
+
+### Сайт показывал «Сайт размещен некорректно»
+
+Файлы были загружены в неправильную директорию или директория была пустая.
+Решение: загрузить содержимое `dist/albakore-site/browser/` в `/www/promservis33.ru/`.
+
+### При обновлении страниц возникала ошибка 404
+
+Отсутствовал `.htaccess` с правилом SPA-роутинга.
+Решение: техподдержка reg.ru добавила `.htaccess` вручную. Теперь файл входит в сборку автоматически.
+
+### Изображения не загружались — ERR_TOO_MANY_REDIRECTS
+
+Причина: в `.htaccess` был добавлен HTTP→HTTPS редирект (`R=301`), который закешировался браузером и создал петлю.
+Решение:
+1. Убрать редирект из `.htaccess`
+2. Очистить кеш браузера / проверить в режиме инкогнито
+3. HTTP→HTTPS настраивать только через ISPmanager, не через `.htaccess`
