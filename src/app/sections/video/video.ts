@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-video',
@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   templateUrl: './video.html',
   styleUrl: './video.scss',
 })
-export class Video {}
+export class Video {
+  protected readonly playing = signal(false);
+
+  protected play() {
+    this.playing.set(true);
+  }
+}

@@ -5,15 +5,22 @@
       <div class="hero-slider__wrap">
         <div class="swiper" #swiperEl>
           <div class="swiper-wrapper">
-            @for (slide of slides; track $index) {
-              <div class="swiper-slide hero-slider__slide">
-                <img
-                  [src]="slide"
-                  alt="Измельчитель древесины Промсервис"
-                  class="hero-slider__img"
-                  [attr.loading]="$first ? 'eager' : 'lazy'"
-                  [attr.fetchpriority]="$first ? 'high' : null">
-              </div>
+            @for (slide of slides; track $index; let i = $index) {
+              @if (ready() || i === 0) {
+                <div class="swiper-slide hero-slider__slide">
+                  <img
+                    [src]="slide.srcSm"
+                    [attr.srcset]="slide.srcSm + ' 800w, ' + slide.src + ' 1600w'"
+                    sizes="(max-width: 900px) 100vw, 1280px"
+                    width="1600"
+                    height="770"
+                    alt="Измельчитель древесины Промсервис"
+                    class="hero-slider__img"
+                    [attr.loading]="i === 0 ? 'eager' : 'lazy'"
+                    [attr.fetchpriority]="i === 0 ? 'high' : null"
+                    decoding="async">
+                </div>
+              }
             }
           </div>
         </div>

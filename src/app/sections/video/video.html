@@ -1,13 +1,25 @@
 <section class="video-section">
   <div class="container">
     <div class="video-section__wrapper">
-      <iframe
-        src="https://rutube.ru/play/embed/e850f5c0eab8f52ef7d07dfa5ec2fa91/"
-        title="Измельчители древесины Рубмастер"
-        allow="clipboard-write; autoplay"
-        allowfullscreen
-        loading="eager">
-      </iframe>
+      @if (playing()) {
+        <iframe
+          src="https://rutube.ru/play/embed/e850f5c0eab8f52ef7d07dfa5ec2fa91/?autoStart=true"
+          title="Измельчители древесины Рубмастер"
+          allow="clipboard-write; autoplay"
+          allowfullscreen>
+        </iframe>
+      } @else {
+        <button type="button" class="video-section__poster" (click)="play()" aria-label="Воспроизвести видео">
+          <img src="/images/mobi-300-1-sm.webp" alt="Превью видео — измельчители древесины Рубмастер"
+               width="1280" height="720" loading="lazy" decoding="async">
+          <span class="video-section__play" aria-hidden="true">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.55)"/>
+              <path d="M32 26L56 40L32 54V26Z" fill="#fff"/>
+            </svg>
+          </span>
+        </button>
+      }
     </div>
   </div>
 </section>

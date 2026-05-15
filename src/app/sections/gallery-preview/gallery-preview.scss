@@ -1,3 +1,8 @@
+// До инициализации Swiper скрываем лишние слайды, чтобы их img не грузились
+.gp .swiper:not(.swiper-initialized) > .swiper-wrapper > .swiper-slide:not(:first-child) {
+  display: none;
+}
+
 .gp {
   padding: 24px 0;
 

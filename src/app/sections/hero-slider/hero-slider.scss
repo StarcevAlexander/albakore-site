@@ -39,6 +39,12 @@
   height: 100%;
 }
 
+// До инициализации Swiper показываем только первый слайд,
+// чтобы lazy-img остальных не грузились в параллель с LCP-изображением
+.hero-slider .swiper:not(.swiper-initialized) > .swiper-wrapper > .swiper-slide:not(:first-child) {
+  display: none;
+}
+
 .hero-slider__img {
   position: absolute;
   inset: 0;

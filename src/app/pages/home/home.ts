@@ -25,66 +25,14 @@ import { MetaService } from '../../services/meta.service';
   ],
   template: `
     <app-hero-slider></app-hero-slider>
-
-    @defer (on viewport) {
-      <app-hero-products></app-hero-products>
-    } @loading {
-      <div class="section-skeleton" style="min-height: 480px"></div>
-    } @placeholder {
-      <div style="min-height: 480px"></div>
-    }
-
-    @defer (on viewport) {
-      <app-video></app-video>
-    } @loading {
-      <div class="section-skeleton" style="min-height: 560px"></div>
-    } @placeholder {
-      <div style="min-height: 560px"></div>
-    }
-
-    @defer (on viewport) {
-      <app-gallery-preview></app-gallery-preview>
-    } @loading {
-      <div class="section-skeleton" style="min-height: 300px"></div>
-    } @placeholder {
-      <div style="min-height: 300px"></div>
-    }
-
-    @defer (on viewport) {
-      <app-catalog-preview></app-catalog-preview>
-    } @loading {
-      <div class="section-skeleton" style="min-height: 600px"></div>
-    } @placeholder {
-      <div style="min-height: 600px"></div>
-    }
-
-    @defer (on viewport) {
-      <app-about></app-about>
-    } @loading {
-      <div class="section-skeleton" style="min-height: 480px"></div>
-    } @placeholder {
-      <div style="min-height: 480px"></div>
-    }
-
-    @defer (on viewport) {
-      <app-clients-preview></app-clients-preview>
-    } @loading {
-      <div class="section-skeleton" style="min-height: 400px"></div>
-    } @placeholder {
-      <div style="min-height: 400px"></div>
-    }
-
-    @defer (on viewport) {
-      <app-social-links></app-social-links>
-    } @placeholder {
-      <div style="min-height: 120px"></div>
-    }
-
-    @defer (on viewport) {
-      <app-contact-form></app-contact-form>
-    } @placeholder {
-      <div style="min-height: 600px"></div>
-    }
+    <app-hero-products></app-hero-products>
+    <app-video></app-video>
+    <app-gallery-preview></app-gallery-preview>
+    <app-catalog-preview></app-catalog-preview>
+    <app-about></app-about>
+    <app-clients-preview></app-clients-preview>
+    <app-social-links></app-social-links>
+    <app-contact-form></app-contact-form>
   `,
 })
 export class Home {

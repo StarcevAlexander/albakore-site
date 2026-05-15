@@ -1,12 +1,7 @@
 // swiper css loaded via angular.json
 
-@font-face {
-  font-family: 'CannonadeBold';
-  src: url('/fonts/CannonadeBold.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+// CannonadeBold подгружается лениво через FontFace API (см. index.html),
+// чтобы не блокировать LCP на первом визите.
 
 // Swiper fade fix — слайды должны быть абсолютными при effect=fade
 .swiper-fade .swiper-slide {

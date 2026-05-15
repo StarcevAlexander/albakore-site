@@ -3,10 +3,12 @@
   <div class="gp__track">
     <div class="swiper" #swiperEl>
       <div class="swiper-wrapper">
-        @for (photo of photos; track photo.alt) {
-          <div class="swiper-slide gp__slide">
-            <img [src]="photo.src" [alt]="photo.alt" width="780" height="260" loading="eager">
-          </div>
+        @for (photo of photos; track photo.alt; let i = $index) {
+          @if (ready() || i === 0) {
+            <div class="swiper-slide gp__slide">
+              <img [src]="photo.src.replace('.webp', '-sm.webp')" [alt]="photo.alt" width="780" height="260" loading="lazy" decoding="async">
+            </div>
+          }
         }
       </div>
     </div>

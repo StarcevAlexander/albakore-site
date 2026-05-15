@@ -23,7 +23,7 @@
       @for (item of items; track item.slug) {
         <div class="cat-card">
           <a [routerLink]="['/catalog', item.slug]" class="cat-card__img">
-            <img [src]="item.img" [alt]="item.name" width="300" height="220" loading="eager">
+            <img [src]="item.img.replace('.webp', '-sm.webp')" [alt]="item.name" width="300" height="220" loading="lazy" decoding="async">
           </a>
           <div class="cat-card__body">
             <h3 class="cat-card__name">{{ item.name }}</h3>
