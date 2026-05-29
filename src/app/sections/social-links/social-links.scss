@@ -3,8 +3,12 @@
 
   &__row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     @media (max-width: 600px) {
       grid-template-columns: 1fr;
@@ -42,11 +46,16 @@
     &--vk      { background: #4C75A3; }
     &--youtube { background: #FF0000; }
     &--rutube  { background: #0C1B29; }
+    &--max     { background: #16203a; }
 
-    svg, span {
+    svg, img, span {
       display: inline-block;
       transform: skewX(14deg);
       flex-shrink: 0;
+    }
+
+    img {
+      border-radius: 6px;
     }
   }
 }
